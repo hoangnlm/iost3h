@@ -13,6 +13,7 @@
 		204422081D7C390B0054C705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204422061D7C390B0054C705 /* Main.storyboard */; };
 		2044220A1D7C390B0054C705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 204422091D7C390B0054C705 /* Assets.xcassets */; };
 		2044220D1D7C390B0054C705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2044220B1D7C390B0054C705 /* LaunchScreen.storyboard */; };
+		7C81B0A885FB8984F84A1BB3 /* libPods-iost3h.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843D6EE96A6C9CE17B125154 /* libPods-iost3h.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		204422091D7C390B0054C705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2044220C1D7C390B0054C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2044220E1D7C390B0054C705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843D6EE96A6C9CE17B125154 /* libPods-iost3h.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iost3h.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C180662AFC34F67A19B0E108 /* Pods-iost3h.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iost3h.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iost3h/Pods-iost3h.debug.xcconfig"; sourceTree = "<group>"; };
+		FF0B485EFAAE44F5F8C90B84 /* Pods-iost3h.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iost3h.release.xcconfig"; path = "Pods/Target Support Files/Pods-iost3h/Pods-iost3h.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C81B0A885FB8984F84A1BB3 /* libPods-iost3h.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				204421FC1D7C390B0054C705 /* iost3h */,
 				204421FB1D7C390B0054C705 /* Products */,
+				BBD4D7660A706623212631B6 /* Pods */,
+				6E6F091280B54CE82AC3CA3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6E6F091280B54CE82AC3CA3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				843D6EE96A6C9CE17B125154 /* libPods-iost3h.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBD4D7660A706623212631B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C180662AFC34F67A19B0E108 /* Pods-iost3h.debug.xcconfig */,
+				FF0B485EFAAE44F5F8C90B84 /* Pods-iost3h.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 204422111D7C390B0054C705 /* Build configuration list for PBXNativeTarget "iost3h" */;
 			buildPhases = (
+				DF6481DC408AEE893C941F20 /* [CP] Check Pods Manifest.lock */,
 				204421F61D7C390B0054C705 /* Sources */,
 				204421F71D7C390B0054C705 /* Frameworks */,
 				204421F81D7C390B0054C705 /* Resources */,
+				E1F72C33D06CAF35ECDFCD8A /* [CP] Embed Pods Frameworks */,
+				FD25D5C1A5FCF3DF570744FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DF6481DC408AEE893C941F20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1F72C33D06CAF35ECDFCD8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iost3h/Pods-iost3h-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD25D5C1A5FCF3DF570744FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iost3h/Pods-iost3h-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		204421F61D7C390B0054C705 /* Sources */ = {
@@ -262,6 +337,7 @@
 		};
 		204422121D7C390B0054C705 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C180662AFC34F67A19B0E108 /* Pods-iost3h.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iost3h/Info.plist;
@@ -273,6 +349,7 @@
 		};
 		204422131D7C390B0054C705 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF0B485EFAAE44F5F8C90B84 /* Pods-iost3h.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iost3h/Info.plist;
@@ -301,6 +378,7 @@
 				204422131D7C390B0054C705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

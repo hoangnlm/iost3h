@@ -1,0 +1,17 @@
+PODS:
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - XCDYouTubeKit (2.5.3)
+
+DEPENDENCIES:
+  - SDWebImage (~> 3.8)
+  - XCDYouTubeKit (~> 2.5)
+
+SPEC CHECKSUMS:
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
+
+PODFILE CHECKSUM: c3d6cb7cfa1f0ecc25396a45b9accfd1f507883d
+
+COCOAPODS: 1.0.1
