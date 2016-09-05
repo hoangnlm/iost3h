@@ -9,26 +9,75 @@
 /* Begin PBXBuildFile section */
 		204421FF1D7C390B0054C705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 204421FE1D7C390B0054C705 /* main.m */; };
 		204422021D7C390B0054C705 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 204422011D7C390B0054C705 /* AppDelegate.m */; };
-		204422051D7C390B0054C705 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204422041D7C390B0054C705 /* ViewController.m */; };
-		204422081D7C390B0054C705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204422061D7C390B0054C705 /* Main.storyboard */; };
 		2044220A1D7C390B0054C705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 204422091D7C390B0054C705 /* Assets.xcassets */; };
 		2044220D1D7C390B0054C705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2044220B1D7C390B0054C705 /* LaunchScreen.storyboard */; };
 		20BB15E71D7D68B8008A7BCE /* cookbookpro in Resources */ = {isa = PBXBuildFile; fileRef = 20BB15E61D7D68B8008A7BCE /* cookbookpro */; };
+		20BB15F61D7D735E008A7BCE /* MonAn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BB15F51D7D735E008A7BCE /* MonAn.storyboard */; };
+		20BB15F91D7D7594008A7BCE /* MonAnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB15F81D7D7594008A7BCE /* MonAnViewController.m */; };
+		20BB15FC1D7D7706008A7BCE /* MonAnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB15FB1D7D7706008A7BCE /* MonAnTableViewCell.m */; };
+		20BB15FF1D7D7894008A7BCE /* MonAn.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB15FE1D7D7894008A7BCE /* MonAn.m */; };
+		20BB16011D7D874D008A7BCE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BB16001D7D874D008A7BCE /* libsqlite3.tbd */; };
+		20BB16041D7DA28B008A7BCE /* DBProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB16031D7DA28B008A7BCE /* DBProvider.m */; };
+		20BB16221D7DB700008A7BCE /* mon0001.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB16191D7DB700008A7BCE /* mon0001.png */; };
+		20BB16231D7DB700008A7BCE /* mon0002.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB161A1D7DB700008A7BCE /* mon0002.png */; };
+		20BB16241D7DB700008A7BCE /* mon0003.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB161B1D7DB700008A7BCE /* mon0003.png */; };
+		20BB16251D7DB700008A7BCE /* mon0004.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB161C1D7DB700008A7BCE /* mon0004.png */; };
+		20BB16261D7DB700008A7BCE /* mon0005.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB161D1D7DB700008A7BCE /* mon0005.png */; };
+		20BB16271D7DB700008A7BCE /* mon0006.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB161E1D7DB700008A7BCE /* mon0006.png */; };
+		20BB16281D7DB700008A7BCE /* mon0007.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB161F1D7DB700008A7BCE /* mon0007.png */; };
+		20BB16291D7DB700008A7BCE /* mon0008.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB16201D7DB700008A7BCE /* mon0008.png */; };
+		20BB162A1D7DB700008A7BCE /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB16211D7DB700008A7BCE /* placeholder.png */; };
+		20BB162D1D7DBC84008A7BCE /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB162C1D7DBC84008A7BCE /* DetailsViewController.m */; };
+		20BB16301D7DBEF8008A7BCE /* CachNau.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB162F1D7DBEF8008A7BCE /* CachNau.m */; };
+		20BB16331D7DBF4C008A7BCE /* CheDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB16321D7DBF4C008A7BCE /* CheDo.m */; };
+		20BB16391D7DBFB9008A7BCE /* NguyenLieu.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB16381D7DBFB9008A7BCE /* NguyenLieu.m */; };
+		20BB163C1D7DBFD0008A7BCE /* DiaDiem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB163B1D7DBFD0008A7BCE /* DiaDiem.m */; };
+		20BB163F1D7DBFEE008A7BCE /* ThoiDiem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB163E1D7DBFEE008A7BCE /* ThoiDiem.m */; };
 		7C81B0A885FB8984F84A1BB3 /* libPods-iost3h.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843D6EE96A6C9CE17B125154 /* libPods-iost3h.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		204421FA1D7C390B0054C705 /* iost3h.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iost3h.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		204421FE1D7C390B0054C705 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		204422001D7C390B0054C705 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		204422011D7C390B0054C705 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		204422031D7C390B0054C705 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		204422041D7C390B0054C705 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		204422071D7C390B0054C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		204422001D7C390B0054C705 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = iost3h/AppDelegate.h; sourceTree = "<group>"; };
+		204422011D7C390B0054C705 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = iost3h/AppDelegate.m; sourceTree = "<group>"; };
 		204422091D7C390B0054C705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2044220C1D7C390B0054C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2044220E1D7C390B0054C705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20BB15E61D7D68B8008A7BCE /* cookbookpro */ = {isa = PBXFileReference; lastKnownFileType = file; path = cookbookpro; sourceTree = "<group>"; };
+		20BB15E61D7D68B8008A7BCE /* cookbookpro */ = {isa = PBXFileReference; lastKnownFileType = file; name = cookbookpro; path = iost3h/cookbookpro; sourceTree = "<group>"; };
+		20BB15F51D7D735E008A7BCE /* MonAn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MonAn.storyboard; sourceTree = "<group>"; };
+		20BB15F71D7D7594008A7BCE /* MonAnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonAnViewController.h; sourceTree = "<group>"; };
+		20BB15F81D7D7594008A7BCE /* MonAnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonAnViewController.m; sourceTree = "<group>"; };
+		20BB15FA1D7D7706008A7BCE /* MonAnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonAnTableViewCell.h; sourceTree = "<group>"; };
+		20BB15FB1D7D7706008A7BCE /* MonAnTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonAnTableViewCell.m; sourceTree = "<group>"; };
+		20BB15FD1D7D7894008A7BCE /* MonAn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonAn.h; sourceTree = "<group>"; };
+		20BB15FE1D7D7894008A7BCE /* MonAn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonAn.m; sourceTree = "<group>"; };
+		20BB16001D7D874D008A7BCE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		20BB16021D7DA28B008A7BCE /* DBProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBProvider.h; sourceTree = "<group>"; };
+		20BB16031D7DA28B008A7BCE /* DBProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBProvider.m; sourceTree = "<group>"; };
+		20BB16051D7DA738008A7BCE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		20BB16191D7DB700008A7BCE /* mon0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0001.png; sourceTree = "<group>"; };
+		20BB161A1D7DB700008A7BCE /* mon0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0002.png; sourceTree = "<group>"; };
+		20BB161B1D7DB700008A7BCE /* mon0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0003.png; sourceTree = "<group>"; };
+		20BB161C1D7DB700008A7BCE /* mon0004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0004.png; sourceTree = "<group>"; };
+		20BB161D1D7DB700008A7BCE /* mon0005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0005.png; sourceTree = "<group>"; };
+		20BB161E1D7DB700008A7BCE /* mon0006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0006.png; sourceTree = "<group>"; };
+		20BB161F1D7DB700008A7BCE /* mon0007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0007.png; sourceTree = "<group>"; };
+		20BB16201D7DB700008A7BCE /* mon0008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0008.png; sourceTree = "<group>"; };
+		20BB16211D7DB700008A7BCE /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		20BB162B1D7DBC84008A7BCE /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		20BB162C1D7DBC84008A7BCE /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		20BB162E1D7DBEF8008A7BCE /* CachNau.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CachNau.h; sourceTree = "<group>"; };
+		20BB162F1D7DBEF8008A7BCE /* CachNau.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CachNau.m; sourceTree = "<group>"; };
+		20BB16311D7DBF4C008A7BCE /* CheDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheDo.h; sourceTree = "<group>"; };
+		20BB16321D7DBF4C008A7BCE /* CheDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheDo.m; sourceTree = "<group>"; };
+		20BB16371D7DBFB9008A7BCE /* NguyenLieu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NguyenLieu.h; sourceTree = "<group>"; };
+		20BB16381D7DBFB9008A7BCE /* NguyenLieu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NguyenLieu.m; sourceTree = "<group>"; };
+		20BB163A1D7DBFD0008A7BCE /* DiaDiem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaDiem.h; sourceTree = "<group>"; };
+		20BB163B1D7DBFD0008A7BCE /* DiaDiem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaDiem.m; sourceTree = "<group>"; };
+		20BB163D1D7DBFEE008A7BCE /* ThoiDiem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoiDiem.h; sourceTree = "<group>"; };
+		20BB163E1D7DBFEE008A7BCE /* ThoiDiem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThoiDiem.m; sourceTree = "<group>"; };
+		20BB16401D7DC44B008A7BCE /* Configs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Configs.h; sourceTree = "<group>"; };
 		843D6EE96A6C9CE17B125154 /* libPods-iost3h.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iost3h.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C180662AFC34F67A19B0E108 /* Pods-iost3h.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iost3h.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iost3h/Pods-iost3h.debug.xcconfig"; sourceTree = "<group>"; };
 		FF0B485EFAAE44F5F8C90B84 /* Pods-iost3h.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iost3h.release.xcconfig"; path = "Pods/Target Support Files/Pods-iost3h/Pods-iost3h.release.xcconfig"; sourceTree = "<group>"; };
@@ -39,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BB16011D7D874D008A7BCE /* libsqlite3.tbd in Frameworks */,
 				7C81B0A885FB8984F84A1BB3 /* libPods-iost3h.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,7 +99,9 @@
 		204421F11D7C390B0054C705 = {
 			isa = PBXGroup;
 			children = (
-				204421FC1D7C390B0054C705 /* iost3h */,
+				20BB15EA1D7D6A24008A7BCE /* Common */,
+				20BB15F21D7D6AE7008A7BCE /* Database */,
+				204421FC1D7C390B0054C705 /* Modules */,
 				204421FB1D7C390B0054C705 /* Products */,
 				BBD4D7660A706623212631B6 /* Pods */,
 				6E6F091280B54CE82AC3CA3C /* Frameworks */,
@@ -64,34 +116,152 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		204421FC1D7C390B0054C705 /* iost3h */ = {
+		204421FC1D7C390B0054C705 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				204422001D7C390B0054C705 /* AppDelegate.h */,
-				204422011D7C390B0054C705 /* AppDelegate.m */,
-				204422031D7C390B0054C705 /* ViewController.h */,
-				204422041D7C390B0054C705 /* ViewController.m */,
-				204422061D7C390B0054C705 /* Main.storyboard */,
-				204422091D7C390B0054C705 /* Assets.xcassets */,
-				2044220B1D7C390B0054C705 /* LaunchScreen.storyboard */,
-				2044220E1D7C390B0054C705 /* Info.plist */,
-				204421FD1D7C390B0054C705 /* Supporting Files */,
+				20BB15E91D7D69D0008A7BCE /* QuanLyThucDon */,
+				20BB15E81D7D696B008A7BCE /* QuanLyMonAn */,
 			);
+			name = Modules;
 			path = iost3h;
 			sourceTree = "<group>";
 		};
 		204421FD1D7C390B0054C705 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				20BB15E61D7D68B8008A7BCE /* cookbookpro */,
+				20BB16061D7DB638008A7BCE /* Images */,
+				204422091D7C390B0054C705 /* Assets.xcassets */,
+				2044220B1D7C390B0054C705 /* LaunchScreen.storyboard */,
+				2044220E1D7C390B0054C705 /* Info.plist */,
 				204421FE1D7C390B0054C705 /* main.m */,
+				20BB16051D7DA738008A7BCE /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			path = iost3h;
+			sourceTree = "<group>";
+		};
+		20BB15E81D7D696B008A7BCE /* QuanLyMonAn */ = {
+			isa = PBXGroup;
+			children = (
+				20BB15EB1D7D6A3D008A7BCE /* Model */,
+				20BB15EE1D7D6A69008A7BCE /* View */,
+				20BB15ED1D7D6A4A008A7BCE /* Controller */,
+			);
+			name = QuanLyMonAn;
+			sourceTree = "<group>";
+		};
+		20BB15E91D7D69D0008A7BCE /* QuanLyThucDon */ = {
+			isa = PBXGroup;
+			children = (
+				20BB15EF1D7D6A77008A7BCE /* Model */,
+				20BB15F01D7D6A7D008A7BCE /* View */,
+				20BB15F11D7D6A82008A7BCE /* Controller */,
+			);
+			name = QuanLyThucDon;
+			sourceTree = "<group>";
+		};
+		20BB15EA1D7D6A24008A7BCE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				204422001D7C390B0054C705 /* AppDelegate.h */,
+				204422011D7C390B0054C705 /* AppDelegate.m */,
+				20BB16401D7DC44B008A7BCE /* Configs.h */,
+				204421FD1D7C390B0054C705 /* Supporting Files */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		20BB15EB1D7D6A3D008A7BCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20BB15FD1D7D7894008A7BCE /* MonAn.h */,
+				20BB15FE1D7D7894008A7BCE /* MonAn.m */,
+				20BB16371D7DBFB9008A7BCE /* NguyenLieu.h */,
+				20BB16381D7DBFB9008A7BCE /* NguyenLieu.m */,
+				20BB162E1D7DBEF8008A7BCE /* CachNau.h */,
+				20BB162F1D7DBEF8008A7BCE /* CachNau.m */,
+				20BB163A1D7DBFD0008A7BCE /* DiaDiem.h */,
+				20BB163B1D7DBFD0008A7BCE /* DiaDiem.m */,
+				20BB163D1D7DBFEE008A7BCE /* ThoiDiem.h */,
+				20BB163E1D7DBFEE008A7BCE /* ThoiDiem.m */,
+				20BB16311D7DBF4C008A7BCE /* CheDo.h */,
+				20BB16321D7DBF4C008A7BCE /* CheDo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		20BB15ED1D7D6A4A008A7BCE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		20BB15EE1D7D6A69008A7BCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20BB15F51D7D735E008A7BCE /* MonAn.storyboard */,
+				20BB15F71D7D7594008A7BCE /* MonAnViewController.h */,
+				20BB15F81D7D7594008A7BCE /* MonAnViewController.m */,
+				20BB15FA1D7D7706008A7BCE /* MonAnTableViewCell.h */,
+				20BB15FB1D7D7706008A7BCE /* MonAnTableViewCell.m */,
+				20BB162B1D7DBC84008A7BCE /* DetailsViewController.h */,
+				20BB162C1D7DBC84008A7BCE /* DetailsViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		20BB15EF1D7D6A77008A7BCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		20BB15F01D7D6A7D008A7BCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		20BB15F11D7D6A82008A7BCE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		20BB15F21D7D6AE7008A7BCE /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				20BB15E61D7D68B8008A7BCE /* cookbookpro */,
+				20BB16021D7DA28B008A7BCE /* DBProvider.h */,
+				20BB16031D7DA28B008A7BCE /* DBProvider.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		20BB16061D7DB638008A7BCE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				20BB16191D7DB700008A7BCE /* mon0001.png */,
+				20BB161A1D7DB700008A7BCE /* mon0002.png */,
+				20BB161B1D7DB700008A7BCE /* mon0003.png */,
+				20BB161C1D7DB700008A7BCE /* mon0004.png */,
+				20BB161D1D7DB700008A7BCE /* mon0005.png */,
+				20BB161E1D7DB700008A7BCE /* mon0006.png */,
+				20BB161F1D7DB700008A7BCE /* mon0007.png */,
+				20BB16201D7DB700008A7BCE /* mon0008.png */,
+				20BB16211D7DB700008A7BCE /* placeholder.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		6E6F091280B54CE82AC3CA3C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20BB16001D7D874D008A7BCE /* libsqlite3.tbd */,
 				843D6EE96A6C9CE17B125154 /* libPods-iost3h.a */,
 			);
 			name = Frameworks;
@@ -167,9 +337,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BB16291D7DB700008A7BCE /* mon0008.png in Resources */,
+				20BB16231D7DB700008A7BCE /* mon0002.png in Resources */,
 				2044220D1D7C390B0054C705 /* LaunchScreen.storyboard in Resources */,
+				20BB162A1D7DB700008A7BCE /* placeholder.png in Resources */,
+				20BB16221D7DB700008A7BCE /* mon0001.png in Resources */,
+				20BB16261D7DB700008A7BCE /* mon0005.png in Resources */,
 				2044220A1D7C390B0054C705 /* Assets.xcassets in Resources */,
-				204422081D7C390B0054C705 /* Main.storyboard in Resources */,
+				20BB16251D7DB700008A7BCE /* mon0004.png in Resources */,
+				20BB16271D7DB700008A7BCE /* mon0006.png in Resources */,
+				20BB16281D7DB700008A7BCE /* mon0007.png in Resources */,
+				20BB15F61D7D735E008A7BCE /* MonAn.storyboard in Resources */,
+				20BB16241D7DB700008A7BCE /* mon0003.png in Resources */,
 				20BB15E71D7D68B8008A7BCE /* cookbookpro in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,23 +408,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				204422051D7C390B0054C705 /* ViewController.m in Sources */,
 				204422021D7C390B0054C705 /* AppDelegate.m in Sources */,
 				204421FF1D7C390B0054C705 /* main.m in Sources */,
+				20BB16391D7DBFB9008A7BCE /* NguyenLieu.m in Sources */,
+				20BB16041D7DA28B008A7BCE /* DBProvider.m in Sources */,
+				20BB163F1D7DBFEE008A7BCE /* ThoiDiem.m in Sources */,
+				20BB15F91D7D7594008A7BCE /* MonAnViewController.m in Sources */,
+				20BB163C1D7DBFD0008A7BCE /* DiaDiem.m in Sources */,
+				20BB162D1D7DBC84008A7BCE /* DetailsViewController.m in Sources */,
+				20BB15FC1D7D7706008A7BCE /* MonAnTableViewCell.m in Sources */,
+				20BB16331D7DBF4C008A7BCE /* CheDo.m in Sources */,
+				20BB15FF1D7D7894008A7BCE /* MonAn.m in Sources */,
+				20BB16301D7DBEF8008A7BCE /* CachNau.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		204422061D7C390B0054C705 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				204422071D7C390B0054C705 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2044220B1D7C390B0054C705 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -344,6 +524,8 @@
 			baseConfigurationReference = C180662AFC34F67A19B0E108 /* Pods-iost3h.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/iost3h/PrefixHeader.pch";
 				INFOPLIST_FILE = iost3h/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.t3h.ios222.iost3h;
@@ -356,6 +538,8 @@
 			baseConfigurationReference = FF0B485EFAAE44F5F8C90B84 /* Pods-iost3h.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/iost3h/PrefixHeader.pch";
 				INFOPLIST_FILE = iost3h/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.t3h.ios222.iost3h;
