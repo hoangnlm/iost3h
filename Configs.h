@@ -11,5 +11,7 @@
 
 // Define some constants
 #define kDBFileName @"cookbookpro"
+#define kFontName1 @"Ariston"
+#define kFontName2 @"UVN Sang Song Nang"
 
 #endif /* Configs_h */

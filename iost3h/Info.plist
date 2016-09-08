@@ -36,5 +36,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>UVNSangSong_N.TTF</string>
+		<string>Aristoni.ttf</string>
+	</array>
 </dict>
 </plist>

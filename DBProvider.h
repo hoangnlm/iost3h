@@ -10,5 +10,8 @@
 #import "sqlite3.h"
 
 @interface DBProvider : NSObject
+@property(nonatomic)sqlite3 *DB;
+
 -(NSString *)getDBPath;
+-(sqlite3_stmt *)getStatementFromQuery:(NSString *)query;
 @end

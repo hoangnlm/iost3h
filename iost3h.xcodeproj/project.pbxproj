@@ -11,6 +11,9 @@
 		204422021D7C390B0054C705 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 204422011D7C390B0054C705 /* AppDelegate.m */; };
 		2044220A1D7C390B0054C705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 204422091D7C390B0054C705 /* Assets.xcassets */; };
 		2044220D1D7C390B0054C705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2044220B1D7C390B0054C705 /* LaunchScreen.storyboard */; };
+		20492E901D81B28500B36920 /* UVNSangSong_N.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 20492E8D1D81AA9E00B36920 /* UVNSangSong_N.TTF */; };
+		209AB6701D7FD8A0002C135A /* MonAnDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 209AB66F1D7FD8A0002C135A /* MonAnDAO.m */; };
+		20AFFBE51D814AA10053CD0B /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AFFBE41D814AA10053CD0B /* UpdateViewController.m */; };
 		20BB15E71D7D68B8008A7BCE /* cookbookpro in Resources */ = {isa = PBXBuildFile; fileRef = 20BB15E61D7D68B8008A7BCE /* cookbookpro */; };
 		20BB15F61D7D735E008A7BCE /* MonAn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BB15F51D7D735E008A7BCE /* MonAn.storyboard */; };
 		20BB15F91D7D7594008A7BCE /* MonAnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB15F81D7D7594008A7BCE /* MonAnViewController.m */; };
@@ -26,13 +29,13 @@
 		20BB16271D7DB700008A7BCE /* mon0006.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB161E1D7DB700008A7BCE /* mon0006.png */; };
 		20BB16281D7DB700008A7BCE /* mon0007.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB161F1D7DB700008A7BCE /* mon0007.png */; };
 		20BB16291D7DB700008A7BCE /* mon0008.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB16201D7DB700008A7BCE /* mon0008.png */; };
-		20BB162A1D7DB700008A7BCE /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BB16211D7DB700008A7BCE /* placeholder.png */; };
 		20BB162D1D7DBC84008A7BCE /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB162C1D7DBC84008A7BCE /* DetailsViewController.m */; };
 		20BB16301D7DBEF8008A7BCE /* CachNau.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB162F1D7DBEF8008A7BCE /* CachNau.m */; };
 		20BB16331D7DBF4C008A7BCE /* CheDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB16321D7DBF4C008A7BCE /* CheDo.m */; };
 		20BB16391D7DBFB9008A7BCE /* NguyenLieu.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB16381D7DBFB9008A7BCE /* NguyenLieu.m */; };
 		20BB163C1D7DBFD0008A7BCE /* DiaDiem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB163B1D7DBFD0008A7BCE /* DiaDiem.m */; };
 		20BB163F1D7DBFEE008A7BCE /* ThoiDiem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB163E1D7DBFEE008A7BCE /* ThoiDiem.m */; };
+		20BBC4871D81BCAD004AA114 /* Aristoni.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20BBC4861D81BC92004AA114 /* Aristoni.ttf */; };
 		7C81B0A885FB8984F84A1BB3 /* libPods-iost3h.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843D6EE96A6C9CE17B125154 /* libPods-iost3h.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,11 @@
 		204422091D7C390B0054C705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2044220C1D7C390B0054C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2044220E1D7C390B0054C705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20492E8D1D81AA9E00B36920 /* UVNSangSong_N.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = UVNSangSong_N.TTF; sourceTree = "<group>"; };
+		209AB66E1D7FD8A0002C135A /* MonAnDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonAnDAO.h; sourceTree = "<group>"; };
+		209AB66F1D7FD8A0002C135A /* MonAnDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonAnDAO.m; sourceTree = "<group>"; };
+		20AFFBE31D814AA10053CD0B /* UpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
+		20AFFBE41D814AA10053CD0B /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
 		20BB15E61D7D68B8008A7BCE /* cookbookpro */ = {isa = PBXFileReference; lastKnownFileType = file; name = cookbookpro; path = iost3h/cookbookpro; sourceTree = "<group>"; };
 		20BB15F51D7D735E008A7BCE /* MonAn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MonAn.storyboard; sourceTree = "<group>"; };
 		20BB15F71D7D7594008A7BCE /* MonAnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonAnViewController.h; sourceTree = "<group>"; };
@@ -64,7 +72,6 @@
 		20BB161E1D7DB700008A7BCE /* mon0006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0006.png; sourceTree = "<group>"; };
 		20BB161F1D7DB700008A7BCE /* mon0007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0007.png; sourceTree = "<group>"; };
 		20BB16201D7DB700008A7BCE /* mon0008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0008.png; sourceTree = "<group>"; };
-		20BB16211D7DB700008A7BCE /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		20BB162B1D7DBC84008A7BCE /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		20BB162C1D7DBC84008A7BCE /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		20BB162E1D7DBEF8008A7BCE /* CachNau.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CachNau.h; sourceTree = "<group>"; };
@@ -78,6 +85,7 @@
 		20BB163D1D7DBFEE008A7BCE /* ThoiDiem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoiDiem.h; sourceTree = "<group>"; };
 		20BB163E1D7DBFEE008A7BCE /* ThoiDiem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThoiDiem.m; sourceTree = "<group>"; };
 		20BB16401D7DC44B008A7BCE /* Configs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Configs.h; sourceTree = "<group>"; };
+		20BBC4861D81BC92004AA114 /* Aristoni.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aristoni.ttf; path = ../Aristoni.ttf; sourceTree = "<group>"; };
 		843D6EE96A6C9CE17B125154 /* libPods-iost3h.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iost3h.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C180662AFC34F67A19B0E108 /* Pods-iost3h.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iost3h.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iost3h/Pods-iost3h.debug.xcconfig"; sourceTree = "<group>"; };
 		FF0B485EFAAE44F5F8C90B84 /* Pods-iost3h.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iost3h.release.xcconfig"; path = "Pods/Target Support Files/Pods-iost3h/Pods-iost3h.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 		204421FD1D7C390B0054C705 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				20492E8B1D81A96B00B36920 /* Fonts */,
 				20BB16061D7DB638008A7BCE /* Images */,
 				204422091D7C390B0054C705 /* Assets.xcassets */,
 				2044220B1D7C390B0054C705 /* LaunchScreen.storyboard */,
@@ -140,9 +149,28 @@
 			path = iost3h;
 			sourceTree = "<group>";
 		};
+		20492E8B1D81A96B00B36920 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				20492E8D1D81AA9E00B36920 /* UVNSangSong_N.TTF */,
+				20BBC4861D81BC92004AA114 /* Aristoni.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		209AB66D1D7FD875002C135A /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				209AB66E1D7FD8A0002C135A /* MonAnDAO.h */,
+				209AB66F1D7FD8A0002C135A /* MonAnDAO.m */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
 		20BB15E81D7D696B008A7BCE /* QuanLyMonAn */ = {
 			isa = PBXGroup;
 			children = (
+				209AB66D1D7FD875002C135A /* DAO */,
 				20BB15EB1D7D6A3D008A7BCE /* Model */,
 				20BB15EE1D7D6A69008A7BCE /* View */,
 				20BB15ED1D7D6A4A008A7BCE /* Controller */,
@@ -193,6 +221,14 @@
 		20BB15ED1D7D6A4A008A7BCE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				20BB15F71D7D7594008A7BCE /* MonAnViewController.h */,
+				20BB15F81D7D7594008A7BCE /* MonAnViewController.m */,
+				20BB15FA1D7D7706008A7BCE /* MonAnTableViewCell.h */,
+				20BB15FB1D7D7706008A7BCE /* MonAnTableViewCell.m */,
+				20BB162B1D7DBC84008A7BCE /* DetailsViewController.h */,
+				20BB162C1D7DBC84008A7BCE /* DetailsViewController.m */,
+				20AFFBE31D814AA10053CD0B /* UpdateViewController.h */,
+				20AFFBE41D814AA10053CD0B /* UpdateViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -201,12 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				20BB15F51D7D735E008A7BCE /* MonAn.storyboard */,
-				20BB15F71D7D7594008A7BCE /* MonAnViewController.h */,
-				20BB15F81D7D7594008A7BCE /* MonAnViewController.m */,
-				20BB15FA1D7D7706008A7BCE /* MonAnTableViewCell.h */,
-				20BB15FB1D7D7706008A7BCE /* MonAnTableViewCell.m */,
-				20BB162B1D7DBC84008A7BCE /* DetailsViewController.h */,
-				20BB162C1D7DBC84008A7BCE /* DetailsViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -253,7 +283,6 @@
 				20BB161E1D7DB700008A7BCE /* mon0006.png */,
 				20BB161F1D7DB700008A7BCE /* mon0007.png */,
 				20BB16201D7DB700008A7BCE /* mon0008.png */,
-				20BB16211D7DB700008A7BCE /* placeholder.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -337,10 +366,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BBC4871D81BCAD004AA114 /* Aristoni.ttf in Resources */,
+				20492E901D81B28500B36920 /* UVNSangSong_N.TTF in Resources */,
 				20BB16291D7DB700008A7BCE /* mon0008.png in Resources */,
 				20BB16231D7DB700008A7BCE /* mon0002.png in Resources */,
 				2044220D1D7C390B0054C705 /* LaunchScreen.storyboard in Resources */,
-				20BB162A1D7DB700008A7BCE /* placeholder.png in Resources */,
 				20BB16221D7DB700008A7BCE /* mon0001.png in Resources */,
 				20BB16261D7DB700008A7BCE /* mon0005.png in Resources */,
 				2044220A1D7C390B0054C705 /* Assets.xcassets in Resources */,
@@ -411,6 +441,7 @@
 				204422021D7C390B0054C705 /* AppDelegate.m in Sources */,
 				204421FF1D7C390B0054C705 /* main.m in Sources */,
 				20BB16391D7DBFB9008A7BCE /* NguyenLieu.m in Sources */,
+				20AFFBE51D814AA10053CD0B /* UpdateViewController.m in Sources */,
 				20BB16041D7DA28B008A7BCE /* DBProvider.m in Sources */,
 				20BB163F1D7DBFEE008A7BCE /* ThoiDiem.m in Sources */,
 				20BB15F91D7D7594008A7BCE /* MonAnViewController.m in Sources */,
@@ -418,6 +449,7 @@
 				20BB162D1D7DBC84008A7BCE /* DetailsViewController.m in Sources */,
 				20BB15FC1D7D7706008A7BCE /* MonAnTableViewCell.m in Sources */,
 				20BB16331D7DBF4C008A7BCE /* CheDo.m in Sources */,
+				209AB6701D7FD8A0002C135A /* MonAnDAO.m in Sources */,
 				20BB15FF1D7D7894008A7BCE /* MonAn.m in Sources */,
 				20BB16301D7DBEF8008A7BCE /* CachNau.m in Sources */,
 			);

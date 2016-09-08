@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DBProvider.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "MonAnTableViewCell.h"
+#import "MonAnDAO.h"
+#import "DetailsViewController.h"
 
-@interface MonAnViewController : UIViewController
+@interface MonAnViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@property(nonatomic) MonAnDAO *dao;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic)NSMutableArray *listMonAn;
 
 @end
