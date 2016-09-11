@@ -10,7 +10,7 @@
 
 @interface MonAnDAO : DBProvider
 -(NSMutableArray *)getListMonAn;
--(BOOL)insertMonAn: (MonAn *) monAn;
--(BOOL)updateMonAn: (MonAn *)monAn;
++(NSMutableArray *)getListMonAn;
+-(BOOL)saveMonAn: (MonAn *) monAn;
 -(BOOL)deleteMonAn: (MonAn *) monAn;
 @end

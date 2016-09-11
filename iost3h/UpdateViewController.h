@@ -6,8 +6,21 @@
 //  Copyright © 2016 Hoang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MonAnDAO.h"
+#import "JVFloatLabeledTextView.h"
 
 @interface UpdateViewController : UIViewController
-@property(nonatomic)BOOL isUpdate;
+@property(nonatomic) MonAnDAO *dao;
+@property(nonatomic)MonAn *currentMonAn;
+@property (weak, nonatomic) IBOutlet UIView *viewTen;
+@property (weak, nonatomic) IBOutlet UIView *viewMoTa;
+@property (weak, nonatomic) IBOutlet UIView *viewNguyenLieu;
+@property (weak, nonatomic) IBOutlet UIView *viewCachNau;
+@property (weak, nonatomic) IBOutlet UIImageView *imgHinh;
+@property (weak, nonatomic) IBOutlet UIView *viewVideo;
+@property (weak, nonatomic) IBOutlet UIView *viewLink;
+
+- (IBAction)save:(id)sender;
+- (IBAction)back:(id)sender;
+
 @end

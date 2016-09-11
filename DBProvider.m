@@ -71,6 +71,7 @@
 -(sqlite3_stmt *)getStatementFromQuery:(NSString *)query{
     // Lay duong dan den folder chua db tren device
     NSString *path = [self getDBPath];
+//    NSLog(@"Path: %@", path);
     // Mo ket noi den DB
     if (sqlite3_open([path UTF8String], &_DB) == SQLITE_OK) {
         // Khoi tao statement

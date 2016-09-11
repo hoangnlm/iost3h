@@ -4,12 +4,42 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BLKFlexibleHeightBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CRToast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CarbonKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JVFloatLabeledTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-iost3h.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RATreeView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWRevealViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5BFEFC9FECE4F5768094FB7BF5D16223</key>
+		<key>0AD19A064850AE6FF33CEF25917446CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BCBBB7B4B1993C1C49BA4B13C4335BC</key>
+		<key>266E27D897FD7FD68078059CF4D7455F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0369F55E676FD9722710BF89F9E75BF</key>
+		<key>346F523B12D2B7E737C7A29243DF6E36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4168CA67CF00F034CDA0DDCE785246D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41A8351FF00FFBD2AD43636AA646C11D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4377464C42489E2AE4BC4910F08BCDA4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7112751ACED56349A420B879DDAD76F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1E50E3231082C007600AF28782DAF8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D77DC2DA39DDBA9CC40755D850E2F4D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

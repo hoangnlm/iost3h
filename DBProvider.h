@@ -11,7 +11,7 @@
 
 @interface DBProvider : NSObject
 @property(nonatomic)sqlite3 *DB;
-
+@property(nonatomic)sqlite3_stmt *statement;
 -(NSString *)getDBPath;
 -(sqlite3_stmt *)getStatementFromQuery:(NSString *)query;
 @end

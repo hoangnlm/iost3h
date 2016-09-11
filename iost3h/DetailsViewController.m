@@ -16,27 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     [self initData];
 }
 
 #pragma mark Custom Functions
 
 -(void)initData{
-    // Doi font cho navigation bar
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 35)];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont fontWithName:kFontName1 size:20];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor orangeColor];
-    self.navigationItem.titleView = label;
-    
     if (self.currentMonAn) {
-        NSString *imagePath = [[NSHomeDirectory() stringByAppendingString:@"/Documents/Images/"] stringByAppendingString:self.currentMonAn._image];
-        label.text = [self.currentMonAn._ten capitalizedString];
-        self.hinh.image = self.currentMonAn._image==nil ? [UIImage imageNamed:@"placeholder"] : [UIImage imageWithContentsOfFile:imagePath];
-        self.nguyenlieu.text = self.currentMonAn._nguyenlieu;
-        self.cachnau.text = self.currentMonAn._cachnau;
-        self.link.text = self.currentMonAn._link;
+        // Doi font cho navigation bar
+        [Utils changeNavigationBarWithFontName:kFontName1 andTitle:[self.currentMonAn._ten capitalizedString] fromContext:self];
+        self.imgHinh.image = self.currentMonAn._image==nil ? [UIImage imageNamed:@"placeholder"] : [Utils getImageWithFileName:self.currentMonAn._image];
+        self.txtNguyenLieu.text = self.currentMonAn._nguyenlieu;
+        self.txtCachNau.text = self.currentMonAn._cachnau;
+        self.txtLink.text = self.currentMonAn._link;
     }
 }
 
@@ -49,8 +44,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UpdateViewController *update = (UpdateViewController *) segue.destinationViewController;
-    update.isUpdate = YES;
+    update.currentMonAn = self.currentMonAn;
 }
 
 
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

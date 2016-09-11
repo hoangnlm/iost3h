@@ -6,8 +6,6 @@
 //  Copyright © 2016 Hoang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface MonAnTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lbTen;
 @property (weak, nonatomic) IBOutlet UIImageView *ivHinh;

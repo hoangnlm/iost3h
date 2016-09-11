@@ -6,14 +6,14 @@
 //  Copyright © 2016 Hoang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "UpdateViewController.h"
 
 @interface DetailsViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *hinh;
-@property (weak, nonatomic) IBOutlet UILabel *nguyenlieu;
-@property (weak, nonatomic) IBOutlet UILabel *cachnau;
+@property (weak, nonatomic) IBOutlet UIImageView *imgHinh;
+@property (weak, nonatomic) IBOutlet UILabel *txtNguyenLieu;
+@property (weak, nonatomic) IBOutlet UILabel *txtCachNau;
 @property (weak, nonatomic) IBOutlet UIView *video;
-@property (weak, nonatomic) IBOutlet UILabel *link;
+@property (weak, nonatomic) IBOutlet UILabel *txtLink;
 @property(nonatomic)MonAn *currentMonAn;
+- (IBAction)back:(id)sender;
 @end

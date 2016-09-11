@@ -1,17 +1,35 @@
 PODS:
+  - BLKFlexibleHeightBar (1.0.2)
+  - CarbonKit (2.1.8)
+  - CRToast (0.0.9)
+  - JVFloatLabeledTextField (1.1.1)
+  - RATreeView (2.1.1)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SWRevealViewController (2.3.0)
   - XCDYouTubeKit (2.5.3)
 
 DEPENDENCIES:
+  - BLKFlexibleHeightBar (~> 1.0)
+  - CarbonKit (~> 2.1)
+  - CRToast (~> 0.0)
+  - JVFloatLabeledTextField (~> 1.1)
+  - RATreeView (~> 2.1)
   - SDWebImage (~> 3.8)
+  - SWRevealViewController (~> 2.3)
   - XCDYouTubeKit (~> 2.5)
 
 SPEC CHECKSUMS:
+  BLKFlexibleHeightBar: b27572a69633d8e33f1f2bbc486b04d8e86f742d
+  CarbonKit: 95d78a09889cc05e36537dd08ec5d73dd55edba4
+  CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
+  JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
+  RATreeView: f40c8fdc7c99eb0aecced77ad20b0c52f4e9a9c4
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 4415ed349119197e2660c6da2b5892e10c794700
+PODFILE CHECKSUM: 36e7125874bd6e99ba7762793946ad82048c05dc
 
 COCOAPODS: 1.0.1
