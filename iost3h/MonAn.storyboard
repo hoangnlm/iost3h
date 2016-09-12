@@ -10,6 +10,7 @@
     <customFonts key="customFonts">
         <mutableArray key="UVNSangSong_N.TTF">
             <string>UVNSangSongNang</string>
+            <string>UVNSangSongNang</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -135,6 +136,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Danh Sách Món Ăn " id="oge-m4-Jne">
+                        <barButtonItem key="backBarButtonItem" title=" " id="7jX-8J-6A3"/>
                         <barButtonItem key="leftBarButtonItem" image="ic_storage_white" id="Rof-Wy-awq">
                             <connections>
                                 <action selector="openMenu:" destination="9yD-Cd-wuP" id="3FA-aR-mi7"/>
@@ -149,6 +151,7 @@
                             <barButtonItem systemItem="search" id="zdd-2l-Pk6">
                                 <connections>
                                     <action selector="search:" destination="9yD-Cd-wuP" id="VRB-xU-eMm"/>
+                                    <segue destination="DPU-0o-OH3" kind="push" identifier="TimKiemClick" id="WKs-c4-WtA"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -529,7 +532,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wi1-lw-Tha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215" y="1029"/>
+            <point key="canvasLocation" x="1215" y="1085"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="IsF-Sr-Q8M">
@@ -544,20 +547,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7V-EJ-ojz" userLabel="scrollview">
-                                <rect key="frame" x="0.0" y="22" width="600" height="578"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="A7V-EJ-ojz" firstAttribute="top" secondItem="IGm-vk-jsu" secondAttribute="top" constant="20" id="0bs-Q8-pQw"/>
                             <constraint firstItem="A7V-EJ-ojz" firstAttribute="top" secondItem="IGm-vk-jsu" secondAttribute="top" id="1CL-10-jWr"/>
                             <constraint firstAttribute="bottom" secondItem="A7V-EJ-ojz" secondAttribute="bottom" id="5U0-ih-NvM"/>
                             <constraint firstItem="A7V-EJ-ojz" firstAttribute="leading" secondItem="IGm-vk-jsu" secondAttribute="leading" id="UlX-uT-GUM"/>
-                            <constraint firstItem="A7V-EJ-ojz" firstAttribute="top" secondItem="MUj-eD-Eb5" secondAttribute="bottom" constant="2" id="c8N-kO-rEt"/>
+                            <constraint firstItem="A7V-EJ-ojz" firstAttribute="top" secondItem="MUj-eD-Eb5" secondAttribute="bottom" id="c8N-kO-rEt"/>
                             <constraint firstAttribute="trailing" secondItem="A7V-EJ-ojz" secondAttribute="trailing" id="cnT-8g-zxX"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="1CL-10-jWr"/>
+                                <exclude reference="c8N-kO-rEt"/>
                             </mask>
                         </variation>
                     </view>
@@ -569,7 +574,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5S-8i-tPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="464" y="-540"/>
+            <point key="canvasLocation" x="464" y="-440"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Gx-2Y-PuX">
@@ -697,7 +702,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhI-i6-c8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="-540"/>
+            <point key="canvasLocation" x="1950" y="-440"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="UEE-OI-T8w">
@@ -725,6 +730,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UxU-Rg-RgC" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="79q-mp-NJa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lbJ-7F-dYM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -736,7 +742,106 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIJ-f1-dOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215" y="-540"/>
+            <point key="canvasLocation" x="1215" y="-440"/>
+        </scene>
+        <!--Tìm Kiếm Món Ăn-->
+        <scene sceneID="wht-cF-G2d">
+            <objects>
+                <viewController id="DPU-0o-OH3" userLabel="Tìm Kiếm Món Ăn" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dxi-Vj-yvv"/>
+                        <viewControllerLayoutGuide type="bottom" id="I7J-WB-Xx8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4fz-Q8-sGi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gog-ve-Nax">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell1" id="6a4-UY-S64" userLabel="Cell1" customClass="MonAnTableViewCell">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6a4-UY-S64" id="q2i-UL-XVW">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="179.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="gzn-ek-W10">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="179.5"/>
+                                                </imageView>
+                                                <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwz-xK-stU">
+                                                    <rect key="frame" x="0.0" y="134" width="600" height="45"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua7-AT-Mrr">
+                                                            <rect key="frame" x="20" y="0.0" width="560" height="45"/>
+                                                            <fontDescription key="fontDescription" name="UVNSangSongNang" family="UVN Sang Song Nang" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Ua7-AT-Mrr" secondAttribute="trailing" constant="20" id="57D-je-bdZ"/>
+                                                        <constraint firstItem="Ua7-AT-Mrr" firstAttribute="top" secondItem="Uwz-xK-stU" secondAttribute="top" id="LkO-nO-dsP"/>
+                                                        <constraint firstItem="Ua7-AT-Mrr" firstAttribute="leading" secondItem="Uwz-xK-stU" secondAttribute="leading" constant="20" id="fgx-Rj-A5T"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ua7-AT-Mrr" secondAttribute="bottom" id="hoM-cP-If9"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gzn-ek-W10" secondAttribute="bottom" id="5CU-GO-3BZ"/>
+                                                <constraint firstItem="Uwz-xK-stU" firstAttribute="height" secondItem="q2i-UL-XVW" secondAttribute="height" multiplier="1/4" id="G44-Ed-S2J"/>
+                                                <constraint firstItem="Uwz-xK-stU" firstAttribute="leading" secondItem="q2i-UL-XVW" secondAttribute="leading" id="b8s-8S-wZQ"/>
+                                                <constraint firstItem="gzn-ek-W10" firstAttribute="top" secondItem="q2i-UL-XVW" secondAttribute="top" id="cGn-be-jfq"/>
+                                                <constraint firstAttribute="trailing" secondItem="Uwz-xK-stU" secondAttribute="trailing" id="gzV-ou-8og"/>
+                                                <constraint firstAttribute="trailing" secondItem="gzn-ek-W10" secondAttribute="trailing" id="rYd-Iz-b1i"/>
+                                                <constraint firstAttribute="bottom" secondItem="Uwz-xK-stU" secondAttribute="bottom" id="rtI-uv-whB"/>
+                                                <constraint firstItem="gzn-ek-W10" firstAttribute="leading" secondItem="q2i-UL-XVW" secondAttribute="leading" id="s3d-CY-W1y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ivHinh" destination="gzn-ek-W10" id="6YV-Pb-0XC"/>
+                                            <outlet property="lbTen" destination="Ua7-AT-Mrr" id="0Vh-el-QXW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DPU-0o-OH3" id="Njg-vA-hsE"/>
+                                    <outlet property="delegate" destination="DPU-0o-OH3" id="ZuI-Eg-NB5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gog-ve-Nax" secondAttribute="trailing" id="Ctx-R0-9H1"/>
+                            <constraint firstItem="Gog-ve-Nax" firstAttribute="leading" secondItem="4fz-Q8-sGi" secondAttribute="leading" id="Rft-C9-GCa"/>
+                            <constraint firstItem="I7J-WB-Xx8" firstAttribute="top" secondItem="Gog-ve-Nax" secondAttribute="bottom" id="Xk3-e7-7Tf"/>
+                            <constraint firstItem="Gog-ve-Nax" firstAttribute="top" secondItem="Dxi-Vj-yvv" secondAttribute="bottom" constant="-64" id="mgC-ge-UQO"/>
+                            <constraint firstItem="Gog-ve-Nax" firstAttribute="top" secondItem="4fz-Q8-sGi" secondAttribute="top" id="pEK-Hq-Vs7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mgC-ge-UQO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Tìm Kiếm Món Ăn" id="Ukx-QZ-RZk">
+                        <barButtonItem key="leftBarButtonItem" image="ic_reply_white" id="buH-Vb-lER">
+                            <connections>
+                                <action selector="back:" destination="DPU-0o-OH3" id="1lx-Co-zAw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Gog-ve-Nax" id="1oC-rf-0lO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6w-1L-Jid" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="1085"/>
         </scene>
     </scenes>
     <resources>
@@ -749,7 +854,7 @@
         <image name="placeholder" width="134" height="89"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OfE-ie-qfk"/>
+        <segue reference="nXP-yK-aaa"/>
         <segue reference="pA6-a9-WSC"/>
     </inferredMetricsTieBreakers>
 </document>

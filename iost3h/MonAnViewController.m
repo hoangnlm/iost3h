@@ -23,12 +23,12 @@
     self.listMonAn = [self.dao getListMonAnWithOption:self.option];
     [self.tableView reloadData];
 //    NSLog(@"Option passed: %@", self.listMonAn);
-    
 }
 
 #pragma mark Helpers
 
 -(void)initData{
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.dao = [MonAnDAO new];
     // Doi font cho navigation bar
     [Utils changeNavigationBarWithFontName:kFontName1 andTitle:@"Danh Sách Món Ăn" fromContext:self];
@@ -121,12 +121,10 @@
 /*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+ 
 }
-*/
+ */
 
 - (IBAction)openMenu:(id)sender {
     [self.revealViewController revealToggleAnimated:YES];
