@@ -7,7 +7,7 @@
 //
 
 #import "MonAnViewController.h"
-
+#import "SWRevealViewController.h"
 @interface MonAnViewController ()
 
 @end
@@ -17,54 +17,90 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initData];
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if (revealViewController) {
-        [self.sideMenuButton setTarget:self.revealViewController];
-        [self.sideMenuButton setAction:@selector(revealToggle:)];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.listMonAn = [self.dao getListMonAn];
+    self.listMonAn = [self.dao getListMonAnWithOption:self.option];
     [self.tableView reloadData];
+//    NSLog(@"Option passed: %@", self.listMonAn);
+    
 }
 
-#pragma mark Custom Functions
+#pragma mark Helpers
 
 -(void)initData{
     self.dao = [MonAnDAO new];
     // Doi font cho navigation bar
     [Utils changeNavigationBarWithFontName:kFontName1 andTitle:@"Danh Sách Món Ăn" fromContext:self];
+    // Add pan gesture cho side menu
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    // Doc setting tu user default
+    self.userDefault = [NSUserDefaults standardUserDefaults];
 }
 
 #pragma mark UITableViewDataSource
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if ([[self.userDefault objectForKey:kSettingHienMonAnMoi] boolValue]) {
+        return 2;
+    } else {
+        return 1;
+    }
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.listMonAn.count;
+    if ([[self.userDefault objectForKey:kSettingHienMonAnMoi] boolValue] && section==0) {
+        return 1;
+    } else {
+        return self.listMonAn.count;
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([[self.userDefault objectForKey:kSettingHienMonAnMoi] boolValue] && indexPath.section==0) {
+        return 220;
+    } else {
+        return 180;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MonAnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    MonAn *monan = self.listMonAn[indexPath.row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.lbTen.text = [monan._ten capitalizedString];
-    cell.ivHinh.image = monan._image==nil ? [UIImage imageNamed:@"placeholder"] : [Utils getImageWithFileName:monan._image];
-//    [cell.ivHinh sd_setImageWithURL:[NSURL fileURLWithPath:imagePath] placeholderImage:[UIImage imageNamed:@"placeholder"]];
-
-    return cell;
+    if ([[self.userDefault objectForKey:kSettingHienMonAnMoi] boolValue] && indexPath.section==0) {
+        MonMoiTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell1"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        NSInteger soluong = [[self.userDefault objectForKey:kSettingSoMonAnMoi] integerValue];
+        [cell setupScrollViewWithParent:self.view andNumberOfFood:soluong];
+        return cell;
+    } else {
+        MonAnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell2"];
+        MonAn *monan = self.listMonAn[indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.lbTen.text = [monan._ten capitalizedString];
+        cell.ivHinh.image = monan._image==nil ? [UIImage imageNamed:@"placeholder"] : [Utils getImageWithFileName:monan._image];
+        return cell;
+    }
 }
 
 #pragma mark UITableViewDelegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    DetailsViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
-    detail.currentMonAn = self.listMonAn[indexPath.row];
-    [self.navigationController pushViewController:detail animated:YES];
+    if (indexPath.section==1) {
+        DetailsViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+        detail.currentMonAn = self.listMonAn[indexPath.row];
+        [self.navigationController pushViewController:detail animated:YES];
+    }
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section==0) {
+        return NO;
+    } else {
+        return  YES;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (indexPath.section==1 && editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete mon an khoi db
         [self.dao deleteMonAn:self.listMonAn[indexPath.row]];
         [self.listMonAn removeObjectAtIndex:indexPath.row];
@@ -92,6 +128,11 @@
 }
 */
 
+- (IBAction)openMenu:(id)sender {
+    [self.revealViewController revealToggleAnimated:YES];
+}
+
 - (IBAction)search:(id)sender {
 }
+
 @end

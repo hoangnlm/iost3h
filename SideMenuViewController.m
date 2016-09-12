@@ -7,6 +7,13 @@
 //
 
 #import "SideMenuViewController.h"
+#define kMenuItemAll @"Tất cả món ăn"
+#define kMenuItemNguyenLieu @"Nguyên liệu"
+#define kMenuItemCachNau @"Cách nấu"
+#define kMenuItemDiaDiem @"Địa điểm"
+#define kMenuItemThoiDiem @"Thời điểm"
+#define kMenuItemCheDo @"Chế độ"
+#define kMenuItemSetting @"Tùy chỉnh"
 
 @interface SideMenuViewController ()<RATreeViewDelegate, RATreeViewDataSource>
 
@@ -23,7 +30,6 @@
     [self loadData];
     
     RATreeView *treeView = [[RATreeView alloc] initWithFrame:self.scrollView.bounds];
-//    RATreeView *treeView = [RATreeView new];
     treeView.delegate = self;
     treeView.dataSource = self;
     treeView.treeFooterView = [UIView new];
@@ -50,8 +56,6 @@
 
     RATableViewCell *cell = [self.treeView dequeueReusableCellWithIdentifier:NSStringFromClass([RATableViewCell class])];
     [cell setupWithTitle:dataItem.name andLevel:level];
-    
-    
     return cell;
 }
 
@@ -85,82 +89,137 @@
 
 -(void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item{
     NSInteger level = [self.treeView levelForCellForItem:item];
-    if (level==1) {
+    RADataObject *dataItem = item;
+    if (level==0) {
+        // Neu click vo tat ca mon an
+        if ([dataItem.name isEqualToString:kMenuItemAll]) {
+            NSDictionary *data = @{@"parent":dataItem, @"item":dataItem};
+            [self performSegueWithIdentifier:@"MenuClick" sender:data];
+        } else if ([dataItem.name isEqualToString:kMenuItemSetting]) { // Neu click vo tuy chinh
+            [self performSegueWithIdentifier:@"TuyChinhClick" sender:self];
+        }
+    } else if (level==1) {     // Neu click vo thanh phan con cua 1 phan loai mon an
         // Push to MonAnViewController with option
-        
+        NSDictionary *data = @{@"parent":[self.treeView parentForItem:item], @"item":item};
+        [self performSegueWithIdentifier:@"MenuClick" sender:data];
+    }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"MenuClick"]){
+        UINavigationController *navigate = (UINavigationController *) segue.destinationViewController;
+        MonAnViewController *monan = (MonAnViewController *) navigate.viewControllers[0];
+        monan.option = [self getOptionFromSender:(NSDictionary *)sender];
     }
 }
 
 #pragma mark Helpers
 
+-(id)getOptionFromSender:(NSDictionary *)sender{
+    id result = nil;
+    RADataObject *parent = sender[@"parent"];
+    RADataObject *item = sender[@"item"];
+    if ([parent.name isEqualToString:kMenuItemNguyenLieu]) {
+        NguyenLieu *tmp = [NguyenLieu new];
+        tmp._ten = item.name;
+        result = tmp;
+    }
+    if ([parent.name isEqualToString:kMenuItemCachNau]) {
+        CachNau *tmp = [CachNau new];
+        tmp._ten = item.name;
+        result = tmp;
+    }
+    if ([parent.name isEqualToString:kMenuItemDiaDiem]) {
+        DiaDiem *tmp = [DiaDiem new];
+        tmp._ten = item.name;
+        result = tmp;
+    }
+    if ([parent.name isEqualToString:kMenuItemThoiDiem]) {
+        ThoiDiem *tmp = [ThoiDiem new];
+        tmp._ten = item.name;
+        result = tmp;
+    }
+    if ([parent.name isEqualToString:kMenuItemCheDo]) {
+        CheDo *tmp = [CheDo new];
+        tmp._ten = item.name;
+        result = tmp;
+    }
+    return  result;
+}
+
 -(UIView *)createHeaderView{
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.treeView.bounds.size.width, 90)];
-    UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(15, 8, 56, 56)];
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(76, 8, self.treeView.bounds.size.width-76, 38)];
-    UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(82, 48, self.treeView.bounds.size.width-82, 16)];
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 80, self.treeView.bounds.size.width, 1)];
+    UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(15, 8, 50, 50)];
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(76, 0, self.treeView.bounds.size.width-76, 38)];
+    UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(77, 40, self.treeView.bounds.size.width-77, 16)];
+    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(0, 70, self.treeView.bounds.size.width, 1.5)];
     
     header.backgroundColor = [UIColor clearColor];
     logo.image = [UIImage imageNamed:@"me"];
     [[logo layer] setMasksToBounds:YES];
     [[logo layer] setBorderColor:[[UIColor cyanColor] CGColor]];
     [[logo layer] setBorderWidth:2];
-    [[logo layer] setCornerRadius:28];
+    [[logo layer] setCornerRadius:25];
     logo.contentMode = UIViewContentModeScaleAspectFit;
     title.text = @"Cook Book Go";
     title.textColor = [UIColor cyanColor];
     title.backgroundColor = [UIColor clearColor];
-    [title setFont:[UIFont fontWithName:@"Zapfino" size:16]];
+    [title setFont:[UIFont fontWithName:kFontName3 size:22]];
     author.text = @"HoangNLM";
     author.textColor = [UIColor cyanColor];
     author.backgroundColor = [UIColor clearColor];
     [author setFont:[author.font fontWithSize:13]];
-    line.backgroundColor = [UIColor cyanColor];
+    line1.backgroundColor = [UIColor cyanColor];
 
     [header addSubview:logo];
     [header addSubview:title];
     [header addSubview:author];
-    [header addSubview:line];
+    [header addSubview:line1];
     return  header;
 }
 
 -(void)loadData{
+    RADataObject *tatca = [RADataObject dataObjectWithName:kMenuItemAll children:nil];
+    
     NSMutableArray *children = [NSMutableArray new];
     for (NguyenLieu *item in [NguyenLieuDAO getListNguyenLieu]) {
         RADataObject *dataItem = [RADataObject dataObjectWithName:item._ten children:nil];
         [children addObject:dataItem];
     }
-    RADataObject *nguyenlieu = [RADataObject dataObjectWithName:@"Nguyên liệu" children:children];
+    RADataObject *nguyenlieu = [RADataObject dataObjectWithName:kMenuItemNguyenLieu children:children];
     
     [children removeAllObjects];
     for (CachNau *item in [CachNauDAO getListCachNau]) {
         RADataObject *dataItem = [RADataObject dataObjectWithName:item._ten children:nil];
         [children addObject:dataItem];
     }
-    RADataObject *cachnau = [RADataObject dataObjectWithName:@"Cách nấu" children:children];
+    RADataObject *cachnau = [RADataObject dataObjectWithName:kMenuItemCachNau children:children];
     
     [children removeAllObjects];
     for (DiaDiem *item in [DiaDiemDAO getListDiaDiem]) {
         RADataObject *dataItem = [RADataObject dataObjectWithName:item._ten children:nil];
         [children addObject:dataItem];
     }
-    RADataObject *diadiem = [RADataObject dataObjectWithName:@"Địa điểm" children:children];
+    RADataObject *diadiem = [RADataObject dataObjectWithName:kMenuItemDiaDiem children:children];
     
     [children removeAllObjects];
     for (ThoiDiem *item in [ThoiDiemDAO getListThoiDiem]) {
         RADataObject *dataItem = [RADataObject dataObjectWithName:item._ten children:nil];
         [children addObject:dataItem];
     }
-    RADataObject *thoidiem = [RADataObject dataObjectWithName:@"Thời điểm" children:children];
+    RADataObject *thoidiem = [RADataObject dataObjectWithName:kMenuItemThoiDiem children:children];
     
     [children removeAllObjects];
     for (CheDo *item in [CheDoDAO getListCheDo]) {
         RADataObject *dataItem = [RADataObject dataObjectWithName:item._ten children:nil];
         [children addObject:dataItem];
     }
-    RADataObject *chedo = [RADataObject dataObjectWithName:@"Chế độ" children:children];
+    RADataObject *chedo = [RADataObject dataObjectWithName:kMenuItemCheDo children:children];
 
-    self.data = [NSArray arrayWithObjects:nguyenlieu, cachnau, diadiem, thoidiem, chedo, nil];
+    RADataObject *cauhinh = [RADataObject dataObjectWithName:kMenuItemSetting children:nil];
+    self.data = [NSArray arrayWithObjects:tatca, nguyenlieu, cachnau, diadiem, thoidiem, chedo, cauhinh, nil];
 }
 
 
@@ -168,15 +227,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -6,15 +6,18 @@
 //  Copyright © 2016 Hoang. All rights reserved.
 //
 
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "MonAnTableViewCell.h"
+#import "MonMoiTableViewCell.h"
 #import "MonAnDAO.h"
 #import "DetailsViewController.h"
 
 @interface MonAnViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic) MonAnDAO *dao;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic)id option;
+@property(nonatomic)NSUserDefaults *userDefault;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideMenuButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)openMenu:(id)sender;
 - (IBAction)search:(id)sender;
 @property(nonatomic)NSMutableArray *listMonAn;
 

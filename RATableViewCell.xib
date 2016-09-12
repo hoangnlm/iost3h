@@ -22,7 +22,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRI-Mt-cj9">
                         <rect key="frame" x="64.5" y="5" width="221.5" height="33.5"/>
-                        <fontDescription key="fontDescription" name="Ariston-Italic" family="Ariston" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="Ariston-Italic" family="Ariston" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>

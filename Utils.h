@@ -6,14 +6,19 @@
 //  Copyright © 2016 Hoang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "JVFloatLabeledTextView.h"
 
 // Define some constants
 #define kDBFileName @"cookbookgo"
 #define kFontName1 @"Ariston"
 #define kFontName2 @"UVN Sang Song Nang"
+#define kFontName3 @"UVN Nguyen Du"
+
+#define kDBOptionMonMoiNhat @"monMoiNhat"
+#define kDBOptionSoLuongMonMoiNhat @"soLuongMonMoiNhat"
+
+#define kSettingHienMonAnMoi @"hienMonAnMoi"
+#define kSettingSoMonAnMoi @"soMonAnMoi"
 
 @interface Utils : NSObject
 +(UIImage *)getImageWithFileName:(NSString *)filename;

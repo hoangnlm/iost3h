@@ -12,18 +12,19 @@
 		2026FBAB1D84F1DE0083D99A /* DiaDiemDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2026FBAA1D84F1DE0083D99A /* DiaDiemDAO.m */; };
 		2026FBAE1D84F1E70083D99A /* ThoiDiemDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2026FBAD1D84F1E70083D99A /* ThoiDiemDAO.m */; };
 		2026FBB11D84F1F20083D99A /* CheDoDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2026FBB01D84F1F20083D99A /* CheDoDAO.m */; };
-		2026FBB51D8509580083D99A /* RAHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2026FBB31D8509580083D99A /* RAHeaderTableViewCell.m */; };
-		2026FBB61D8509580083D99A /* RAHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2026FBB41D8509580083D99A /* RAHeaderTableViewCell.xib */; };
+		2026FBB81D858D820083D99A /* MonAn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2026FBB71D858D820083D99A /* MonAn.storyboard */; };
+		2026FBBA1D858F680083D99A /* UVNNguyenDu.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 2026FBB91D858F540083D99A /* UVNNguyenDu.TTF */; };
 		204421FF1D7C390B0054C705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 204421FE1D7C390B0054C705 /* main.m */; };
 		204422021D7C390B0054C705 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 204422011D7C390B0054C705 /* AppDelegate.m */; };
 		2044220A1D7C390B0054C705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 204422091D7C390B0054C705 /* Assets.xcassets */; };
 		2044220D1D7C390B0054C705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2044220B1D7C390B0054C705 /* LaunchScreen.storyboard */; };
 		20492E901D81B28500B36920 /* UVNSangSong_N.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 20492E8D1D81AA9E00B36920 /* UVNSangSong_N.TTF */; };
 		2072669A1D81D3D50022C798 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 207266991D81D3D50022C798 /* Utils.m */; };
+		2079415B1D86412700E56716 /* TuyChinhViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2079415A1D86412700E56716 /* TuyChinhViewController.m */; };
+		2079415E1D86A0C400E56716 /* MonMoiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2079415D1D86A0C400E56716 /* MonMoiTableViewCell.m */; };
 		209AB6701D7FD8A0002C135A /* MonAnDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 209AB66F1D7FD8A0002C135A /* MonAnDAO.m */; };
 		20AFFBE51D814AA10053CD0B /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AFFBE41D814AA10053CD0B /* UpdateViewController.m */; };
 		20BB15E71D7D68B8008A7BCE /* cookbookgo in Resources */ = {isa = PBXBuildFile; fileRef = 20BB15E61D7D68B8008A7BCE /* cookbookgo */; };
-		20BB15F61D7D735E008A7BCE /* MonAn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BB15F51D7D735E008A7BCE /* MonAn.storyboard */; };
 		20BB15F91D7D7594008A7BCE /* MonAnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB15F81D7D7594008A7BCE /* MonAnViewController.m */; };
 		20BB15FC1D7D7706008A7BCE /* MonAnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB15FB1D7D7706008A7BCE /* MonAnTableViewCell.m */; };
 		20BB15FF1D7D7894008A7BCE /* MonAn.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB15FE1D7D7894008A7BCE /* MonAn.m */; };
@@ -62,9 +63,8 @@
 		2026FBAD1D84F1E70083D99A /* ThoiDiemDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThoiDiemDAO.m; sourceTree = "<group>"; };
 		2026FBAF1D84F1F20083D99A /* CheDoDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheDoDAO.h; sourceTree = "<group>"; };
 		2026FBB01D84F1F20083D99A /* CheDoDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheDoDAO.m; sourceTree = "<group>"; };
-		2026FBB21D8509580083D99A /* RAHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAHeaderTableViewCell.h; sourceTree = "<group>"; };
-		2026FBB31D8509580083D99A /* RAHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAHeaderTableViewCell.m; sourceTree = "<group>"; };
-		2026FBB41D8509580083D99A /* RAHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		2026FBB71D858D820083D99A /* MonAn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MonAn.storyboard; sourceTree = "<group>"; };
+		2026FBB91D858F540083D99A /* UVNNguyenDu.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = UVNNguyenDu.TTF; sourceTree = "<group>"; };
 		204421FA1D7C390B0054C705 /* iost3h.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iost3h.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		204421FE1D7C390B0054C705 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		204422001D7C390B0054C705 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = iost3h/AppDelegate.h; sourceTree = "<group>"; };
@@ -75,12 +75,15 @@
 		20492E8D1D81AA9E00B36920 /* UVNSangSong_N.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = UVNSangSong_N.TTF; sourceTree = "<group>"; };
 		207266981D81D3D50022C798 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		207266991D81D3D50022C798 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		207941591D86412700E56716 /* TuyChinhViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuyChinhViewController.h; sourceTree = "<group>"; };
+		2079415A1D86412700E56716 /* TuyChinhViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuyChinhViewController.m; sourceTree = "<group>"; };
+		2079415C1D86A0C400E56716 /* MonMoiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonMoiTableViewCell.h; sourceTree = "<group>"; };
+		2079415D1D86A0C400E56716 /* MonMoiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonMoiTableViewCell.m; sourceTree = "<group>"; };
 		209AB66E1D7FD8A0002C135A /* MonAnDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonAnDAO.h; sourceTree = "<group>"; };
 		209AB66F1D7FD8A0002C135A /* MonAnDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonAnDAO.m; sourceTree = "<group>"; };
 		20AFFBE31D814AA10053CD0B /* UpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
 		20AFFBE41D814AA10053CD0B /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
 		20BB15E61D7D68B8008A7BCE /* cookbookgo */ = {isa = PBXFileReference; lastKnownFileType = file; name = cookbookgo; path = iost3h/cookbookgo; sourceTree = "<group>"; };
-		20BB15F51D7D735E008A7BCE /* MonAn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MonAn.storyboard; sourceTree = "<group>"; };
 		20BB15F71D7D7594008A7BCE /* MonAnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonAnViewController.h; sourceTree = "<group>"; };
 		20BB15F81D7D7594008A7BCE /* MonAnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonAnViewController.m; sourceTree = "<group>"; };
 		20BB15FA1D7D7706008A7BCE /* MonAnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonAnTableViewCell.h; sourceTree = "<group>"; };
@@ -168,8 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				20FD813B1D8470EC00FE9EE8 /* SideMenu */,
-				20BB15E91D7D69D0008A7BCE /* QuanLyThucDon */,
+				207941581D8640D800E56716 /* TuyChinh */,
 				20BB15E81D7D696B008A7BCE /* QuanLyMonAn */,
+				20BB15E91D7D69D0008A7BCE /* QuanLyThucDon */,
 			);
 			name = Modules;
 			path = iost3h;
@@ -191,10 +195,20 @@
 		20492E8B1D81A96B00B36920 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				2026FBB91D858F540083D99A /* UVNNguyenDu.TTF */,
 				20492E8D1D81AA9E00B36920 /* UVNSangSong_N.TTF */,
 				20BBC4861D81BC92004AA114 /* Aristoni.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		207941581D8640D800E56716 /* TuyChinh */ = {
+			isa = PBXGroup;
+			children = (
+				207941591D86412700E56716 /* TuyChinhViewController.h */,
+				2079415A1D86412700E56716 /* TuyChinhViewController.m */,
+			);
+			name = TuyChinh;
 			sourceTree = "<group>";
 		};
 		209AB66D1D7FD875002C135A /* DAO */ = {
@@ -274,6 +288,8 @@
 			children = (
 				20BB15F71D7D7594008A7BCE /* MonAnViewController.h */,
 				20BB15F81D7D7594008A7BCE /* MonAnViewController.m */,
+				2079415C1D86A0C400E56716 /* MonMoiTableViewCell.h */,
+				2079415D1D86A0C400E56716 /* MonMoiTableViewCell.m */,
 				20BB15FA1D7D7706008A7BCE /* MonAnTableViewCell.h */,
 				20BB15FB1D7D7706008A7BCE /* MonAnTableViewCell.m */,
 				20BB162B1D7DBC84008A7BCE /* DetailsViewController.h */,
@@ -288,7 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				2044220B1D7C390B0054C705 /* LaunchScreen.storyboard */,
-				20BB15F51D7D735E008A7BCE /* MonAn.storyboard */,
+				2026FBB71D858D820083D99A /* MonAn.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -346,9 +362,6 @@
 			children = (
 				20FD813C1D84725D00FE9EE8 /* RADataObject.h */,
 				20FD813D1D84725D00FE9EE8 /* RADataObject.m */,
-				2026FBB21D8509580083D99A /* RAHeaderTableViewCell.h */,
-				2026FBB31D8509580083D99A /* RAHeaderTableViewCell.m */,
-				2026FBB41D8509580083D99A /* RAHeaderTableViewCell.xib */,
 				20FD81451D8473D500FE9EE8 /* RATableViewCell.h */,
 				20FD81461D8473D500FE9EE8 /* RATableViewCell.m */,
 				20FD81471D8473D500FE9EE8 /* RATableViewCell.xib */,
@@ -438,8 +451,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2026FBBA1D858F680083D99A /* UVNNguyenDu.TTF in Resources */,
 				20BBC4871D81BCAD004AA114 /* Aristoni.ttf in Resources */,
 				20FD81491D8473D500FE9EE8 /* RATableViewCell.xib in Resources */,
+				2026FBB81D858D820083D99A /* MonAn.storyboard in Resources */,
 				20492E901D81B28500B36920 /* UVNSangSong_N.TTF in Resources */,
 				20BB16291D7DB700008A7BCE /* mon0008.png in Resources */,
 				20BB16231D7DB700008A7BCE /* mon0002.png in Resources */,
@@ -447,11 +462,9 @@
 				20BB16221D7DB700008A7BCE /* mon0001.png in Resources */,
 				20BB16261D7DB700008A7BCE /* mon0005.png in Resources */,
 				2044220A1D7C390B0054C705 /* Assets.xcassets in Resources */,
-				2026FBB61D8509580083D99A /* RAHeaderTableViewCell.xib in Resources */,
 				20BB16251D7DB700008A7BCE /* mon0004.png in Resources */,
 				20BB16271D7DB700008A7BCE /* mon0006.png in Resources */,
 				20BB16281D7DB700008A7BCE /* mon0007.png in Resources */,
-				20BB15F61D7D735E008A7BCE /* MonAn.storyboard in Resources */,
 				20BB16241D7DB700008A7BCE /* mon0003.png in Resources */,
 				20BB15E71D7D68B8008A7BCE /* cookbookgo in Resources */,
 			);
@@ -514,6 +527,7 @@
 			files = (
 				204422021D7C390B0054C705 /* AppDelegate.m in Sources */,
 				204421FF1D7C390B0054C705 /* main.m in Sources */,
+				2079415E1D86A0C400E56716 /* MonMoiTableViewCell.m in Sources */,
 				20BB16391D7DBFB9008A7BCE /* NguyenLieu.m in Sources */,
 				2026FBAE1D84F1E70083D99A /* ThoiDiemDAO.m in Sources */,
 				2026FBB11D84F1F20083D99A /* CheDoDAO.m in Sources */,
@@ -529,12 +543,12 @@
 				20BB15FC1D7D7706008A7BCE /* MonAnTableViewCell.m in Sources */,
 				20BB16331D7DBF4C008A7BCE /* CheDo.m in Sources */,
 				20FD813A1D84404200FE9EE8 /* SideMenuViewController.m in Sources */,
-				2026FBB51D8509580083D99A /* RAHeaderTableViewCell.m in Sources */,
 				2026FBA51D84F1C50083D99A /* NguyenLieuDAO.m in Sources */,
 				209AB6701D7FD8A0002C135A /* MonAnDAO.m in Sources */,
 				20BB15FF1D7D7894008A7BCE /* MonAn.m in Sources */,
 				20FD81481D8473D500FE9EE8 /* RATableViewCell.m in Sources */,
 				2026FBA81D84F1D20083D99A /* CachNauDAO.m in Sources */,
+				2079415B1D86412700E56716 /* TuyChinhViewController.m in Sources */,
 				20BB16301D7DBEF8008A7BCE /* CachNau.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

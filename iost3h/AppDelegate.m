@@ -22,12 +22,9 @@
 
     // Change the background color of navigation bar
     [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    // Change image color of navigation bar
+    [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
     
-    // Change the font style of the navigation bar
-//    NSShadow *shadow = [[NSShadow alloc] init];
-//    shadow.shadowColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.8];
-//    shadow.shadowOffset = CGSizeMake(0, 0);
-//    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor], NSForegroundColorAttributeName, shadow, NSShadowAttributeName, [UIFont fontWithName:kFontName1 size:16], NSFontAttributeName, nil]];
     return YES;
 }
 

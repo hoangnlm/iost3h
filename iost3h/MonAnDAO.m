@@ -9,9 +9,47 @@
 #import "MonAnDAO.h"
 
 @implementation MonAnDAO
--(NSMutableArray *)getListMonAn{
+
+-(NSMutableArray *)getListMonAnWithOption:(id)option{
     NSMutableArray *listMonAn = [NSMutableArray new];
-    NSString *query = @"select * from monan";
+    NSMutableString *query = [NSMutableString new];
+    [query appendString:@"select * from monan as m "];
+    // Neu co option
+    if (option) {
+        NSString *joinClause = @"";
+        NSString *whereClause = @"";
+        
+        if ([option isKindOfClass:[NguyenLieu class]]) {
+            NguyenLieu *item = option;
+            joinClause = @"join monan_nguyenlieu as n on m.id=n.monan_id ";
+            whereClause = [NSString stringWithFormat:@"where n.nguyenlieu_id=(select id from nguyenlieu where ten='%@')", item._ten];
+        } else if ([option isKindOfClass:[CachNau class]]) {
+            CachNau *item = option;
+            joinClause = @"join monan_cachnau as c on m.id=c.monan_id ";
+            whereClause = [NSString stringWithFormat:@"where c.cachnau_id=(select id from cachnau where ten='%@')", item._ten];
+        } else if ([option isKindOfClass:[DiaDiem class]]) {
+            DiaDiem *item = option;
+            joinClause = @"join monan_diadiem as d on m.id=d.monan_id ";
+            whereClause = [NSString stringWithFormat:@"where d.diadiem_id=(select id from diadiem where ten='%@')", item._ten];
+        } else if ([option isKindOfClass:[ThoiDiem class]]) {
+            ThoiDiem *item = option;
+            joinClause = @"join monan_thoidiem as t on m.id=t.monan_id ";
+            whereClause = [NSString stringWithFormat:@"where t.thoidiem_id=(select id from thoidiem where ten='%@')", item._ten];
+        } else if ([option isKindOfClass:[CheDo class]]) {
+            CheDo *item = option;
+            joinClause = @"join monan_chedo as c2 on m.id=c2.monan_id ";
+            whereClause = [NSString stringWithFormat:@"where c2.chedo_id=(select id from chedo where ten='%@')", item._ten];
+        } else if ([option isKindOfClass:[NSDictionary class]]) {  // Lay danh sach mon an theo yeu cau
+            NSDictionary *dic = option;
+            if (dic[kDBOptionMonMoiNhat]) { // Lay N mon an moi nhat
+                [query appendString:[NSString stringWithFormat:@"order by id ASC limit %@ ", dic[kDBOptionSoLuongMonMoiNhat]]];
+            }
+        }
+        [query appendString:joinClause];
+        [query appendString:whereClause];
+//        NSLog(@"Query: %@", query);
+
+    }
     super.statement = [super getStatementFromQuery:query];
     if (super.statement) {
         while (sqlite3_step(super.statement) == SQLITE_ROW) {
@@ -43,8 +81,8 @@
     return listMonAn;
 }
 
-+(NSMutableArray *)getListMonAn{
-    return [[MonAnDAO new] getListMonAn];
++(NSMutableArray *)getListMonAnWithOption:(id)option{
+    return [[MonAnDAO new] getListMonAnWithOption:option];
 }
 
 -(BOOL)saveMonAn: (MonAn *)monAn{

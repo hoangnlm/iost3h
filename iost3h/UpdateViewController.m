@@ -23,6 +23,7 @@
 #pragma mark Custom Functions
 
 -(void)initData{
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     // Doi font cho navigation bar
     [Utils changeNavigationBarWithFontName:kFontName1 andTitle:self.currentMonAn ? @"Cập Nhật Món Ăn" : @"Thêm Món Ăn" fromContext:self];
     if (!self.currentMonAn) {

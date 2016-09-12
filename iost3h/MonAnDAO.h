@@ -9,8 +9,8 @@
 #import "DBProvider.h"
 
 @interface MonAnDAO : DBProvider
--(NSMutableArray *)getListMonAn;
-+(NSMutableArray *)getListMonAn;
+-(NSMutableArray *)getListMonAnWithOption:(id)option;
++(NSMutableArray *)getListMonAnWithOption:(id)option;
 -(BOOL)saveMonAn: (MonAn *) monAn;
 -(BOOL)deleteMonAn: (MonAn *) monAn;
 @end

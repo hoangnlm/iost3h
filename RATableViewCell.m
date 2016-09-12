@@ -20,14 +20,17 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+//    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+    // Doi mau khi select cell
+    UIView * selectedBackgroundView = [UIView new];
+    [selectedBackgroundView setBackgroundColor:[UIColor colorWithRed:0.6 green:0.4 blue:0.22 alpha:1]];
+    [self setSelectedBackgroundView:selectedBackgroundView];
 }
 
 - (void)setupWithTitle:(NSString *)title andLevel:(NSInteger)level{
@@ -42,7 +45,7 @@
     
     if (level==0) {
         self.imgMenuItem.image = [UIImage imageNamed:@"menu_item_1"];
-        [self.lblMenuItem setFont:[UIFont fontWithName:@"Ariston" size:20]];
+        [self.lblMenuItem setFont:[UIFont fontWithName:kFontName1 size:17]];
         self.constraintLeft.constant = 16;
     }
     if(level==1) {
