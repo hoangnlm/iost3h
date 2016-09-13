@@ -30,6 +30,14 @@
     return  filename;
 }
 
+// Copy hinh vao device khi user chon hinh tu image picker
++(void)copyImageToDeviceWithImageName:(NSString *)imageName fromUIImage:(UIImage *)image{
+    NSData *pngData = UIImagePNGRepresentation(image);
+    NSString *imageFolder = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Images"];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@", imageFolder, imageName];
+    [pngData writeToFile:filePath atomically:YES]; //Write the file
+}
+
 // Hien thi thong bao voi 1 nut OK
 +(void)showInfoMessage:(NSString *)message fromContext:(UIViewController *)context withOKHandler:(void (^)(UIAlertAction * action))handler{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];

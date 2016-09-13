@@ -11,6 +11,10 @@
 @interface MonAnDAO : DBProvider
 -(NSMutableArray *)getListMonAnWithOption:(id)option;
 +(NSMutableArray *)getListMonAnWithOption:(id)option;
--(BOOL)saveMonAn: (MonAn *) monAn;
+-(BOOL)updateMonAn: (MonAn *)monAn;
++(BOOL)updateMonAn: (MonAn *)monAn;
+-(NSInteger)insertMonAn: (MonAn *)monAn;
++(NSInteger)insertMonAn: (MonAn *)monAn;
 -(BOOL)deleteMonAn: (MonAn *) monAn;
++(BOOL)deleteMonAn: (MonAn *) monAn;
 @end

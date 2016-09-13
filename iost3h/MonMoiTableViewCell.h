@@ -7,9 +7,12 @@
 //
 
 #import "MonAnDAO.h"
+#import "DetailsViewController.h"
 
 @interface MonMoiTableViewCell : UITableViewCell<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-- (void)setupScrollViewWithParent:(UIView *)parent andNumberOfFood:(NSInteger)number;
+@property(nonatomic)UIViewController *context;
+@property(nonatomic)NSArray<MonAn *> *listMonAn;
+- (void)setupScrollViewWithParent:(UIView *)parent andNumberOfFood:(NSInteger)number inContext:(UIViewController *)context;
 @end

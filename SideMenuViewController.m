@@ -8,6 +8,7 @@
 
 #import "SideMenuViewController.h"
 #define kMenuItemAll @"Tất cả món ăn"
+#define kMenuItemMonAnMoiNhat @"Các món mới nhất"
 #define kMenuItemNguyenLieu @"Nguyên liệu"
 #define kMenuItemCachNau @"Cách nấu"
 #define kMenuItemDiaDiem @"Địa điểm"
@@ -95,6 +96,11 @@
         if ([dataItem.name isEqualToString:kMenuItemAll]) {
             NSDictionary *data = @{@"parent":dataItem, @"item":dataItem};
             [self performSegueWithIdentifier:@"MenuClick" sender:data];
+            
+        } else if([dataItem.name isEqualToString:kMenuItemMonAnMoiNhat]) {   // Neu click vo cac mon an moi nhat
+            NSDictionary *data = @{@"parent":dataItem, @"item":dataItem};
+            [self performSegueWithIdentifier:@"MenuClick" sender:data];
+            
         } else if ([dataItem.name isEqualToString:kMenuItemSetting]) { // Neu click vo tuy chinh
             [self performSegueWithIdentifier:@"TuyChinhClick" sender:self];
         }
@@ -125,25 +131,24 @@
         NguyenLieu *tmp = [NguyenLieu new];
         tmp._ten = item.name;
         result = tmp;
-    }
-    if ([parent.name isEqualToString:kMenuItemCachNau]) {
+    } else if ([parent.name isEqualToString:kMenuItemCachNau]) {
         CachNau *tmp = [CachNau new];
         tmp._ten = item.name;
         result = tmp;
-    }
-    if ([parent.name isEqualToString:kMenuItemDiaDiem]) {
+    } else if ([parent.name isEqualToString:kMenuItemDiaDiem]) {
         DiaDiem *tmp = [DiaDiem new];
         tmp._ten = item.name;
         result = tmp;
-    }
-    if ([parent.name isEqualToString:kMenuItemThoiDiem]) {
+    } else if ([parent.name isEqualToString:kMenuItemThoiDiem]) {
         ThoiDiem *tmp = [ThoiDiem new];
         tmp._ten = item.name;
         result = tmp;
-    }
-    if ([parent.name isEqualToString:kMenuItemCheDo]) {
+    } else if ([parent.name isEqualToString:kMenuItemCheDo]) {
         CheDo *tmp = [CheDo new];
         tmp._ten = item.name;
+        result = tmp;
+    } else if ([parent.name isEqualToString:kMenuItemMonAnMoiNhat]) {
+        NSDictionary *tmp = @{kDBOptionMonMoiNhat: @(1), kDBOptionSoLuongMonMoiNhat: @(20)};
         result = tmp;
     }
     return  result;
@@ -182,6 +187,7 @@
 
 -(void)loadData{
     RADataObject *tatca = [RADataObject dataObjectWithName:kMenuItemAll children:nil];
+    RADataObject *moinhat = [RADataObject dataObjectWithName:kMenuItemMonAnMoiNhat children:nil];
     
     NSMutableArray *children = [NSMutableArray new];
     for (NguyenLieu *item in [NguyenLieuDAO getListNguyenLieu]) {
@@ -219,7 +225,7 @@
     RADataObject *chedo = [RADataObject dataObjectWithName:kMenuItemCheDo children:children];
 
     RADataObject *cauhinh = [RADataObject dataObjectWithName:kMenuItemSetting children:nil];
-    self.data = [NSArray arrayWithObjects:tatca, nguyenlieu, cachnau, diadiem, thoidiem, chedo, cauhinh, nil];
+    self.data = [NSArray arrayWithObjects:tatca, moinhat, nguyenlieu, cachnau, diadiem, thoidiem, chedo, cauhinh, nil];
 }
 
 

@@ -41,7 +41,7 @@
 #pragma mark UITableViewDataSource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if ([[self.userDefault objectForKey:kSettingHienMonAnMoi] boolValue]) {
+    if ([self.userDefault boolForKey:kSettingHienMonAnMoi]) {
         return 2;
     } else {
         return 1;
@@ -49,7 +49,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if ([[self.userDefault objectForKey:kSettingHienMonAnMoi] boolValue] && section==0) {
+    if ([self.userDefault boolForKey:kSettingHienMonAnMoi] && section==0) {
         return 1;
     } else {
         return self.listMonAn.count;
@@ -57,7 +57,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([[self.userDefault objectForKey:kSettingHienMonAnMoi] boolValue] && indexPath.section==0) {
+    if ([self.userDefault boolForKey:kSettingHienMonAnMoi] && indexPath.section==0) {
         return 220;
     } else {
         return 180;
@@ -65,11 +65,11 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([[self.userDefault objectForKey:kSettingHienMonAnMoi] boolValue] && indexPath.section==0) {
+    if ([self.userDefault boolForKey:kSettingHienMonAnMoi] && indexPath.section==0) {
         MonMoiTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell1"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         NSInteger soluong = [[self.userDefault objectForKey:kSettingSoMonAnMoi] integerValue];
-        [cell setupScrollViewWithParent:self.view andNumberOfFood:soluong];
+        [cell setupScrollViewWithParent:self.view andNumberOfFood:soluong inContext:self];
         return cell;
     } else {
         MonAnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell2"];
@@ -125,6 +125,8 @@
  
 }
  */
+
+#pragma mark - Actions
 
 - (IBAction)openMenu:(id)sender {
     [self.revealViewController revealToggleAnimated:YES];

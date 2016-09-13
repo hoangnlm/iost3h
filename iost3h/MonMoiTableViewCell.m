@@ -58,20 +58,25 @@ dispatch_source_t CreateDispatchTimer(double interval, dispatch_queue_t queue, d
     x1 = 0;
 }
 
-- (void)setupScrollViewWithParent:(UIView *)parent andNumberOfFood:(NSInteger)number{
+#pragma mark - Helpers
+
+- (void)setupScrollViewWithParent:(UIView *)parent andNumberOfFood:(NSInteger)number inContext:(UIViewController *)context{
     // Tao du lieu
     NSDictionary *option = @{kDBOptionMonMoiNhat:@(1), kDBOptionSoLuongMonMoiNhat:@(number)};
-    NSArray<MonAn *> *listMonAn = [MonAnDAO getListMonAnWithOption:option];
+    self.listMonAn = [MonAnDAO getListMonAnWithOption:option];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadDetailsPage)];
+    [self.scrollView addGestureRecognizer:tap];
+    self.context = context;
     
     // Vong lap tao ra cac imageView va them vao scrollView
     int x = 0;
-    for (int i=0; i<listMonAn.count; i++) {
+    for (int i=0; i<self.listMonAn.count; i++) {
         // Khoi tao imageView de chua hinh voi kich thuoc cua scrollView
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, 0, parent.frame.size.width, _scrollView.frame.size.height)];
         // Thiet lap image cho imageView
-        imageView.image = [Utils getImageWithFileName:listMonAn[i]._image];
+        imageView.image = [Utils getImageWithFileName:self.listMonAn[i]._image];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
-        // Them imageView vao scrollView
         [_scrollView addSubview:imageView];
         x += imageView.frame.size.width;
     }
@@ -83,15 +88,21 @@ dispatch_source_t CreateDispatchTimer(double interval, dispatch_queue_t queue, d
     _scrollView.pagingEnabled = true;
     
     // Thiet lap so luong trang cho pageControl
-    [_pageControl setNumberOfPages:listMonAn.count];
+    [_pageControl setNumberOfPages:self.listMonAn.count];
     
     // Thiet lap delegate
     _scrollView.delegate = self;
     
     // Thiet lap timer tu dong scroll
-    if (listMonAn.count>1) {
+    if (self.listMonAn.count>1) {
         [self startTimer];
     }
+}
+
+-(void)loadDetailsPage{
+    DetailsViewController *detail = [self.context.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([DetailsViewController class])];
+    detail.currentMonAn = self.listMonAn[self.pageControl.currentPage];
+    [self.context.navigationController pushViewController:detail animated:YES];
 }
 
 - (void)onTimer{
@@ -103,10 +114,6 @@ dispatch_source_t CreateDispatchTimer(double interval, dispatch_queue_t queue, d
     
     // Cap nhat pageControl
     [self updatePageControl:x1];
-    
-//    NSLog(@"scrollview width: %f", _scrollView.frame.size.width);
-//    NSLog(@"x1: %f", x1);
-    
 }
 
 - (void)updatePageControl:(int)x{

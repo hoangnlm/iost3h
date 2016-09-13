@@ -20,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (![Utils checkNetworkConnection]) {
-        [CRToastManager showNotificationWithMessage:@"Không kết nối internet được!" completionBlock:nil];
+        [self performSelector:@selector(showToast) withObject:nil afterDelay:1];
+
     }
 }
 
@@ -39,6 +40,10 @@
 
 #pragma mark - Helpers
 
+-(void)showToast{
+    [CRToastManager showNotificationWithMessage:@"Không kết nối internet để xem video được!" completionBlock:nil];
+}
+
 -(void)initData{
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
@@ -49,10 +54,9 @@
         self.txtNguyenLieu.text = self.currentMonAn._nguyenlieu;
         self.txtCachNau.text = self.currentMonAn._cachnau;
         self.txtLink.text = self.currentMonAn._link;
-        if (self.currentMonAn._video && [Utils checkNetworkConnection]) {
+        if (![[self.currentMonAn._video stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""] && [Utils checkNetworkConnection]) {
             NSString *videoIdentifier = [[self.currentMonAn._video componentsSeparatedByString:@"/"] lastObject];
             [self loadVideoThumbnailWithVideoIdentifier:videoIdentifier];
-//            [self loadVideoWithVideoIdentifier:videoIdentifier];
         }
     }
 }
@@ -62,7 +66,6 @@
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(videoPlayerViewControllerDidReceiveVideo:) name:XCDYouTubeVideoPlayerViewControllerDidReceiveVideoNotification object:self.videoPlayerViewController];
     [defaultCenter addObserver:self selector:@selector(moviePlayerPlaybackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:self.videoPlayerViewController.moviePlayer];
-//    [self loadVideoThumbnailWithVideoIdentifier:videoIdentifier];
 }
 
 -(void)loadVideo{

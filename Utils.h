@@ -21,6 +21,7 @@
 @interface Utils : NSObject
 +(UIImage *)getImageWithFileName:(NSString *)filename;
 +(NSString *)imageNameFromNumber:(NSInteger)number;
++(void)copyImageToDeviceWithImageName:(NSString *)imageName fromUIImage:(UIImage *)image;
 +(void)showInfoMessage:(NSString *)message fromContext:(UIViewController *)context withOKHandler:(void (^)(UIAlertAction * action))handler;
 +(void)decorateTextView:(UITextView *)textView;
 +(void)decorateImageView:(UIImageView *)imageView;

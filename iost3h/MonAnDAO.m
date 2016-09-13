@@ -47,8 +47,8 @@
         }
         [query appendString:joinClause];
         [query appendString:whereClause];
-//        NSLog(@"Query: %@", query);
-
+        //        NSLog(@"Query: %@", query);
+        
     }
     super.statement = [super getStatementFromQuery:query];
     if (super.statement) {
@@ -85,23 +85,16 @@
     return [[MonAnDAO new] getListMonAnWithOption:option];
 }
 
--(BOOL)saveMonAn: (MonAn *)monAn{
+-(BOOL)updateMonAn: (MonAn *)monAn{
     BOOL result = NO;
-    NSString *query;
-    if (monAn._id) {    // Update mon an
-    query = [NSString stringWithFormat:@"update monan set ten=?, mota=?, nguyenlieu=?, cachnau=?, image=?, video=?, link=? where id=%ld", monAn._id];
-    } else {                    // Insert mon an moi
-        query = @"insert into monan(ten, mota, nguyenlieu, cachnau, image, video, link) values(?, ?, ?, ?, NULL, ?, ?)";
-    }
-
+    NSString *query = [NSString stringWithFormat:@"update monan set ten=?, mota=?, nguyenlieu=?, cachnau=?, image=?, video=?, link=? where id=%ld", monAn._id];
     super.statement = [super getStatementFromQuery:query];
     if (super.statement) {
         sqlite3_bind_text(super.statement, 1, [monAn._ten UTF8String], -1, NULL);
         sqlite3_bind_text(super.statement, 2, [monAn._mota UTF8String], -1, NULL);
         sqlite3_bind_text(super.statement, 3, [monAn._nguyenlieu UTF8String], -1, NULL);
         sqlite3_bind_text(super.statement, 4, [monAn._cachnau UTF8String], -1, NULL);
-        // Rieng mon an cap nhat sau
-//        sqlite3_bind_text(super.statement, 5, [monAn._image UTF8String], -1, NULL);
+        sqlite3_bind_text(super.statement, 5, [monAn._image UTF8String], -1, NULL);
         sqlite3_bind_text(super.statement, 6, [monAn._video UTF8String], -1, NULL);
         sqlite3_bind_text(super.statement, 7, [monAn._link UTF8String], -1, NULL);
         if (sqlite3_step(super.statement) == SQLITE_DONE) {
@@ -112,6 +105,52 @@
     //Giai phong statement
     sqlite3_finalize(super.statement);
     return  result;
+}
+
++(BOOL)updateMonAn: (MonAn *)monAn{
+    return [[MonAnDAO new] updateMonAn:monAn];
+}
+
+-(NSInteger)insertMonAn: (MonAn *)monAn{
+    NSInteger monAnId = 0;
+    NSString *query = @"insert into monan(ten, mota, nguyenlieu, cachnau, image, video, link) values(?, ?, ?, ?, NULL, ?, ?)";
+    super.statement = [super getStatementFromQuery:query];
+    if (super.statement) {
+        sqlite3_bind_text(super.statement, 1, [monAn._ten UTF8String], -1, NULL);
+        sqlite3_bind_text(super.statement, 2, [monAn._mota UTF8String], -1, NULL);
+        sqlite3_bind_text(super.statement, 3, [monAn._nguyenlieu UTF8String], -1, NULL);
+        sqlite3_bind_text(super.statement, 4, [monAn._cachnau UTF8String], -1, NULL);
+        sqlite3_bind_text(super.statement, 5, [monAn._video UTF8String], -1, NULL);
+        sqlite3_bind_text(super.statement, 6, [monAn._link UTF8String], -1, NULL);
+        if (sqlite3_step(super.statement) == SQLITE_DONE) {
+            if (monAn._image) {
+                monAnId = [self updateImageAfterInsert];
+            } else {
+                //Giai phong statement
+                sqlite3_finalize(super.statement);
+            }
+        }
+    }
+    
+    return monAnId;
+}
+
++(NSInteger)insertMonAn: (MonAn *)monAn{
+    return  [[MonAnDAO new] insertMonAn:monAn];
+}
+
+// Update lai ten hinh sau khi insert (do luc insert khong biet truoc duoc id, sau khi insert moi biet id)
+-(NSInteger)updateImageAfterInsert{
+    // Lay thong tin id cua mon an vua moi insert vao
+    NSDictionary *option = @{kDBOptionMonMoiNhat:@(1), kDBOptionSoLuongMonMoiNhat:@(1)};
+    MonAn *monMoiNhat = [self getListMonAnWithOption:option][0];
+    monMoiNhat._image = [Utils imageNameFromNumber:monMoiNhat._id];
+    
+    // Update lai image name vao DB
+    [self updateMonAn:monMoiNhat];
+    
+    // Tra ve ten image vua update
+    return monMoiNhat._id;
 }
 
 -(BOOL)deleteMonAn: (MonAn *) monAn{
@@ -125,5 +164,9 @@
     //Giai phong statement
     sqlite3_finalize(super.statement);
     return result;
+}
+
++(BOOL)deleteMonAn: (MonAn *) monAn{
+    return [[MonAnDAO new] deleteMonAn:monAn];
 }
 @end

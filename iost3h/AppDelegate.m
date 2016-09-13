@@ -28,12 +28,13 @@
     // Default settings for toast
     [CRToastManager setDefaultOptions:@{
                                         kCRToastNotificationTypeKey : @(CRToastTypeNavigationBar),
+                                        kCRToastImageKey : [UIImage imageNamed:@"alert_icon.png"],
                                         kCRToastFontKey             : [UIFont fontWithName:@"HelveticaNeue-Light" size:16],
                                         kCRToastTextColorKey        : [UIColor whiteColor],
                                         kCRToastBackgroundColorKey  : [UIColor orangeColor],
-                                        kCRToastTimeIntervalKey : @(1.0),
-                                        kCRToastAnimationInTypeKey : @(CRToastAnimationTypeSpring),
-                                        kCRToastAnimationOutTypeKey : @(CRToastAnimationTypeLinear),
+                                        kCRToastTimeIntervalKey : @(2.0),
+                                        kCRToastAnimationInTypeKey : @(CRToastAnimationTypeGravity),
+                                        kCRToastAnimationOutTypeKey : @(CRToastAnimationTypeSpring),
                                         kCRToastAnimationInDirectionKey : @(CRToastAnimationDirectionTop),
                                         kCRToastAnimationOutDirectionKey : @(CRToastAnimationDirectionTop),
                                         kCRToastAutorotateKey       : @(YES),

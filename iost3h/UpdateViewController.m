@@ -66,6 +66,14 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+// Cap nhat hinh mon an
+-(void)updateImage{
+    //        [userDefault setObject:[NSData dataWithData:UIImageJPEGRepresentation(self.imageView.image, 1.0)] forKey:@"image"];
+    if (self.currentMonAn._image) {
+        
+    }
+}
+
 #pragma mark - UIImagePickerControllerDelegate
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
@@ -77,7 +85,6 @@
     self.imgHinh.image = info[UIImagePickerControllerEditedImage];
     // Dong image picker view lai khi user da chon xong hinh
     [self dismissViewControllerAnimated:YES completion:nil];
-//        [userDefault setObject:[NSData dataWithData:UIImageJPEGRepresentation(self.imageView.image, 1.0)] forKey:@"image"];
 }
 
 #pragma mark - Actions
@@ -103,22 +110,43 @@
     self.currentMonAn._nguyenlieu = [nguyenlieu.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     self.currentMonAn._cachnau = [cachnau.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     // Luu ten hinh
-    if (self.imgHinh.image == [UIImage imageNamed:@"placeholder"]) {
-        self.currentMonAn._image = nil;
+    if (self.imgHinh.image != [UIImage imageNamed:@"placeholder"]) {
+        if (!self.currentMonAn._image) {
+            self.currentMonAn._image = [NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]];
+            NSLog(@"imagename: %@", self.currentMonAn._image);
+        }
     }
     self.currentMonAn._video = [video.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     self.currentMonAn._link = [link.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    // Luu vao db
-    self.dao = [MonAnDAO new];
-    if ([self.dao saveMonAn:self.currentMonAn]) {
-        // Thong bao luu thanh cong xong quay ve man hinh chinh
-        [CRToastManager showNotificationWithMessage:@"Đã lưu thông tin!" completionBlock:^{
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
-    } else {
-        // Thong bao luu khong thanh cong
-        [CRToastManager showNotificationWithMessage:@"Lỗi! Không thể lưu thông tin!" completionBlock:nil];
+    // Cap nhat vao db
+    if (self.currentMonAn._id) {
+        if ([MonAnDAO updateMonAn:self.currentMonAn]) {
+            // Copy hinh vao device
+            [Utils copyImageToDeviceWithImageName:self.currentMonAn._image fromUIImage:self.imgHinh.image];
+            // Thong bao luu thanh cong xong quay ve man hinh chinh
+            [CRToastManager showNotificationWithMessage:@"Đã lưu thông tin!" completionBlock:^{
+                [self.navigationController popViewControllerAnimated:YES];
+            }];
+        } else {
+            // Thong bao luu khong thanh cong
+            [CRToastManager showNotificationWithMessage:@"Lỗi! Không thể lưu thông tin!" completionBlock:nil];
+        }
+    } else { // Insert moi mon an
+        NSInteger monAnId = [MonAnDAO insertMonAn:self.currentMonAn];
+        if (monAnId) {
+            if (!self.currentMonAn._image) {
+                // Copy hinh vao device
+                [Utils copyImageToDeviceWithImageName:[Utils imageNameFromNumber:monAnId] fromUIImage:self.imgHinh.image];
+            }
+            // Thong bao luu thanh cong xong quay ve man hinh chinh
+            [CRToastManager showNotificationWithMessage:@"Đã lưu thông tin!" completionBlock:^{
+                [self.navigationController popViewControllerAnimated:YES];
+            }];
+        } else {
+            // Thong bao luu khong thanh cong
+            [CRToastManager showNotificationWithMessage:@"Lỗi! Không thể lưu thông tin!" completionBlock:nil];
+        }
     }
 }
 
