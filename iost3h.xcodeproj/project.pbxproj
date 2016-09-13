@@ -46,6 +46,17 @@
 		20BB163C1D7DBFD0008A7BCE /* DiaDiem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB163B1D7DBFD0008A7BCE /* DiaDiem.m */; };
 		20BB163F1D7DBFEE008A7BCE /* ThoiDiem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BB163E1D7DBFEE008A7BCE /* ThoiDiem.m */; };
 		20BBC4871D81BCAD004AA114 /* Aristoni.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20BBC4861D81BC92004AA114 /* Aristoni.ttf */; };
+		20FA2EE21D879D990079AF88 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FA2EE11D879D990079AF88 /* Reachability.m */; };
+		20FA2EEF1D8800990079AF88 /* mon0096.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EE51D8800990079AF88 /* mon0096.png */; };
+		20FA2EF01D8800990079AF88 /* mon0097.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EE61D8800990079AF88 /* mon0097.png */; };
+		20FA2EF11D8800990079AF88 /* mon0098.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EE71D8800990079AF88 /* mon0098.png */; };
+		20FA2EF21D8800990079AF88 /* mon0099.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EE81D8800990079AF88 /* mon0099.png */; };
+		20FA2EF31D8800990079AF88 /* mon0100.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EE91D8800990079AF88 /* mon0100.png */; };
+		20FA2EF41D8800990079AF88 /* mon0101.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EEA1D8800990079AF88 /* mon0101.png */; };
+		20FA2EF51D8800990079AF88 /* mon0102.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EEB1D8800990079AF88 /* mon0102.png */; };
+		20FA2EF61D8800990079AF88 /* mon0103.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EEC1D8800990079AF88 /* mon0103.png */; };
+		20FA2EF71D8800990079AF88 /* mon0104.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EED1D8800990079AF88 /* mon0104.png */; };
+		20FA2EF81D8800990079AF88 /* mon0105.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FA2EEE1D8800990079AF88 /* mon0105.png */; };
 		20FD813A1D84404200FE9EE8 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FD81391D84404200FE9EE8 /* SideMenuViewController.m */; };
 		20FD813E1D84725D00FE9EE8 /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FD813D1D84725D00FE9EE8 /* RADataObject.m */; };
 		20FD81481D8473D500FE9EE8 /* RATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FD81461D8473D500FE9EE8 /* RATableViewCell.m */; };
@@ -118,6 +129,18 @@
 		20BB163D1D7DBFEE008A7BCE /* ThoiDiem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoiDiem.h; sourceTree = "<group>"; };
 		20BB163E1D7DBFEE008A7BCE /* ThoiDiem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThoiDiem.m; sourceTree = "<group>"; };
 		20BBC4861D81BC92004AA114 /* Aristoni.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aristoni.ttf; path = ../Aristoni.ttf; sourceTree = "<group>"; };
+		20FA2EE01D879D990079AF88 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		20FA2EE11D879D990079AF88 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		20FA2EE51D8800990079AF88 /* mon0096.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0096.png; sourceTree = "<group>"; };
+		20FA2EE61D8800990079AF88 /* mon0097.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0097.png; sourceTree = "<group>"; };
+		20FA2EE71D8800990079AF88 /* mon0098.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0098.png; sourceTree = "<group>"; };
+		20FA2EE81D8800990079AF88 /* mon0099.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0099.png; sourceTree = "<group>"; };
+		20FA2EE91D8800990079AF88 /* mon0100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0100.png; sourceTree = "<group>"; };
+		20FA2EEA1D8800990079AF88 /* mon0101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0101.png; sourceTree = "<group>"; };
+		20FA2EEB1D8800990079AF88 /* mon0102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0102.png; sourceTree = "<group>"; };
+		20FA2EEC1D8800990079AF88 /* mon0103.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0103.png; sourceTree = "<group>"; };
+		20FA2EED1D8800990079AF88 /* mon0104.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0104.png; sourceTree = "<group>"; };
+		20FA2EEE1D8800990079AF88 /* mon0105.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mon0105.png; sourceTree = "<group>"; };
 		20FD81381D84404200FE9EE8 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		20FD81391D84404200FE9EE8 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		20FD813C1D84725D00FE9EE8 /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
@@ -190,6 +213,8 @@
 				204422091D7C390B0054C705 /* Assets.xcassets */,
 				2044220E1D7C390B0054C705 /* Info.plist */,
 				204421FE1D7C390B0054C705 /* main.m */,
+				20FA2EE01D879D990079AF88 /* Reachability.h */,
+				20FA2EE11D879D990079AF88 /* Reachability.m */,
 				20BB16051D7DA738008A7BCE /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
@@ -365,6 +390,16 @@
 				20BB161E1D7DB700008A7BCE /* mon0006.png */,
 				20BB161F1D7DB700008A7BCE /* mon0007.png */,
 				20BB16201D7DB700008A7BCE /* mon0008.png */,
+				20FA2EE51D8800990079AF88 /* mon0096.png */,
+				20FA2EE61D8800990079AF88 /* mon0097.png */,
+				20FA2EE71D8800990079AF88 /* mon0098.png */,
+				20FA2EE81D8800990079AF88 /* mon0099.png */,
+				20FA2EE91D8800990079AF88 /* mon0100.png */,
+				20FA2EEA1D8800990079AF88 /* mon0101.png */,
+				20FA2EEB1D8800990079AF88 /* mon0102.png */,
+				20FA2EEC1D8800990079AF88 /* mon0103.png */,
+				20FA2EED1D8800990079AF88 /* mon0104.png */,
+				20FA2EEE1D8800990079AF88 /* mon0105.png */,
 			);
 			name = Images;
 			path = iost3h;
@@ -468,18 +503,28 @@
 				20BBC4871D81BCAD004AA114 /* Aristoni.ttf in Resources */,
 				20FD81491D8473D500FE9EE8 /* RATableViewCell.xib in Resources */,
 				2026FBB81D858D820083D99A /* MonAn.storyboard in Resources */,
+				20FA2EF11D8800990079AF88 /* mon0098.png in Resources */,
 				20492E901D81B28500B36920 /* UVNSangSong_N.TTF in Resources */,
 				20BB16291D7DB700008A7BCE /* mon0008.png in Resources */,
+				20FA2EF01D8800990079AF88 /* mon0097.png in Resources */,
 				20BB16231D7DB700008A7BCE /* mon0002.png in Resources */,
 				2044220D1D7C390B0054C705 /* LaunchScreen.storyboard in Resources */,
+				20FA2EF21D8800990079AF88 /* mon0099.png in Resources */,
 				20BB16221D7DB700008A7BCE /* mon0001.png in Resources */,
+				20FA2EF61D8800990079AF88 /* mon0103.png in Resources */,
 				20BB16261D7DB700008A7BCE /* mon0005.png in Resources */,
 				2044220A1D7C390B0054C705 /* Assets.xcassets in Resources */,
 				20BB16251D7DB700008A7BCE /* mon0004.png in Resources */,
+				20FA2EF31D8800990079AF88 /* mon0100.png in Resources */,
+				20FA2EF51D8800990079AF88 /* mon0102.png in Resources */,
+				20FA2EEF1D8800990079AF88 /* mon0096.png in Resources */,
 				20BB16271D7DB700008A7BCE /* mon0006.png in Resources */,
+				20FA2EF81D8800990079AF88 /* mon0105.png in Resources */,
 				20BB16281D7DB700008A7BCE /* mon0007.png in Resources */,
 				20BB16241D7DB700008A7BCE /* mon0003.png in Resources */,
 				20BB15E71D7D68B8008A7BCE /* cookbookgo in Resources */,
+				20FA2EF41D8800990079AF88 /* mon0101.png in Resources */,
+				20FA2EF71D8800990079AF88 /* mon0104.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +608,7 @@
 				20FD81481D8473D500FE9EE8 /* RATableViewCell.m in Sources */,
 				2026FBA81D84F1D20083D99A /* CachNauDAO.m in Sources */,
 				2079415B1D86412700E56716 /* TuyChinhViewController.m in Sources */,
+				20FA2EE21D879D990079AF88 /* Reachability.m in Sources */,
 				20BB16301D7DBEF8008A7BCE /* CachNau.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

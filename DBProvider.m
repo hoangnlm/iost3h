@@ -41,18 +41,18 @@
                     // Copy image vao device
                     NSString *filename;
                     for (int i=1; i<=8; i++) {
-                        if (i<10) {
-                            filename = [NSString stringWithFormat:@"mon000%d", i];
+                        filename = [Utils imageNameFromNumber:i];
+                        // Quy dinh hinh cua mon an co extension la "png"
+                        NSString *source = [[NSBundle mainBundle] pathForResource:filename ofType:@"png"];
+                        NSString *destination = [NSString stringWithFormat:@"%@/%@.png", imageFolder, filename];
+                        [fm copyItemAtPath:source toPath:destination error:&error];
+                        if (error) {
+                            NSLog(@"Error copy images: %@", error.localizedDescription);
                         }
-                        if (10<=i && i<=99) {
-                            filename = [NSString stringWithFormat:@"mon00%d", i];
-                        }
-                        if (100<=i && i<=999) {
-                            filename = [NSString stringWithFormat:@"mon0%d", i];
-                        }
-                        if (1000<=i && i<=9999) {
-                            filename = [NSString stringWithFormat:@"mon%d", i];
-                        }
+                    }
+                    for (int i=96; i<=105; i++) {
+                        filename = [Utils imageNameFromNumber:i];
+                        // Quy dinh hinh cua mon an co extension la "png"
                         NSString *source = [[NSBundle mainBundle] pathForResource:filename ofType:@"png"];
                         NSString *destination = [NSString stringWithFormat:@"%@/%@.png", imageFolder, filename];
                         [fm copyItemAtPath:source toPath:destination error:&error];

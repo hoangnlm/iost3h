@@ -42,7 +42,7 @@
         } else if ([option isKindOfClass:[NSDictionary class]]) {  // Lay danh sach mon an theo yeu cau
             NSDictionary *dic = option;
             if (dic[kDBOptionMonMoiNhat]) { // Lay N mon an moi nhat
-                [query appendString:[NSString stringWithFormat:@"order by id ASC limit %@ ", dic[kDBOptionSoLuongMonMoiNhat]]];
+                [query appendString:[NSString stringWithFormat:@"order by id DESC limit %@ ", dic[kDBOptionSoLuongMonMoiNhat]]];
             }
         }
         [query appendString:joinClause];
@@ -91,7 +91,7 @@
     if (monAn._id) {    // Update mon an
     query = [NSString stringWithFormat:@"update monan set ten=?, mota=?, nguyenlieu=?, cachnau=?, image=?, video=?, link=? where id=%ld", monAn._id];
     } else {                    // Insert mon an moi
-        query = @"insert into monan(ten, mota, nguyenlieu, cachnau, image, video, link) values(?, ?, ?, ?, ?, ?, ?)";
+        query = @"insert into monan(ten, mota, nguyenlieu, cachnau, image, video, link) values(?, ?, ?, ?, NULL, ?, ?)";
     }
 
     super.statement = [super getStatementFromQuery:query];
@@ -100,7 +100,8 @@
         sqlite3_bind_text(super.statement, 2, [monAn._mota UTF8String], -1, NULL);
         sqlite3_bind_text(super.statement, 3, [monAn._nguyenlieu UTF8String], -1, NULL);
         sqlite3_bind_text(super.statement, 4, [monAn._cachnau UTF8String], -1, NULL);
-        sqlite3_bind_text(super.statement, 5, [monAn._image UTF8String], -1, NULL);
+        // Rieng mon an cap nhat sau
+//        sqlite3_bind_text(super.statement, 5, [monAn._image UTF8String], -1, NULL);
         sqlite3_bind_text(super.statement, 6, [monAn._video UTF8String], -1, NULL);
         sqlite3_bind_text(super.statement, 7, [monAn._link UTF8String], -1, NULL);
         if (sqlite3_step(super.statement) == SQLITE_DONE) {

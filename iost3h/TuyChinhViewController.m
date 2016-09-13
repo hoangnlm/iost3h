@@ -30,28 +30,16 @@
     
     // Lay value tu user default
     self.userDefault = [NSUserDefaults standardUserDefaults];
-    [self.switchHienMonMoi setOn:[[self.userDefault objectForKey:kSettingHienMonAnMoi] boolValue]];
-    self.lblSoMonAnMoi.text = [NSString stringWithFormat:@"%@", [self.userDefault objectForKey:kSettingSoMonAnMoi]];
-    if (!self.lblSoMonAnMoi.text) {
-        self.lblSoMonAnMoi.text = @"5";
-    }
-    self.stepperSoMonMoi.value = [[self.userDefault objectForKey:kSettingSoMonAnMoi] doubleValue];
-    if (!self.stepperSoMonMoi.value) {
-        self.stepperSoMonMoi.value = 5;
-    }
+    [self.switchHienMonMoi setOn:[self.userDefault boolForKey:kSettingHienMonAnMoi]];
+    self.lblSoMonAnMoi.text = [NSString stringWithFormat:@"%zd", [self.userDefault integerForKey:kSettingSoMonAnMoi]];
+    self.stepperSoMonMoi.value = [self.userDefault integerForKey:kSettingSoMonAnMoi];
     [self toggleSoMonAnMoi];
 }
 
 -(void)toggleSoMonAnMoi{
-    if (!self.switchHienMonMoi.isOn) {
-        self.lblMonAnMoi.enabled = NO;
-        self.lblSoMonAnMoi.enabled = NO;
-        self.stepperSoMonMoi.enabled = NO;
-    } else {
-        self.lblMonAnMoi.enabled = YES;
-        self.lblSoMonAnMoi.enabled = YES;
-        self.stepperSoMonMoi.enabled = YES;
-    }
+    self.lblMonAnMoi.enabled = self.switchHienMonMoi.isOn;
+    self.lblSoMonAnMoi.enabled = self.switchHienMonMoi.isOn;
+    self.stepperSoMonMoi.enabled = self.switchHienMonMoi.isOn;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,13 +60,13 @@
 #pragma mark Actions
 
 - (IBAction)hienMonAnMoi:(id)sender {
-    [self.userDefault setObject:@(self.switchHienMonMoi.isOn) forKey:kSettingHienMonAnMoi];
+    [self.userDefault setBool:self.switchHienMonMoi.isOn forKey:kSettingHienMonAnMoi];
     [self toggleSoMonAnMoi];
 }
 
 - (IBAction)soMonAnMoi:(id)sender {
     self.lblSoMonAnMoi.text = [NSString stringWithFormat:@"%.0f", self.stepperSoMonMoi.value];
-    [self.userDefault setObject:@(self.stepperSoMonMoi.value) forKey:kSettingSoMonAnMoi];
+    [self.userDefault setInteger:self.stepperSoMonMoi.value forKey:kSettingSoMonAnMoi];
 }
 
 - (IBAction)openMenu:(id)sender {

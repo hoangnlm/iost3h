@@ -6,8 +6,6 @@
 //  Copyright © 2016 Hoang. All rights reserved.
 //
 
-#import "JVFloatLabeledTextView.h"
-
 // Define some constants
 #define kDBFileName @"cookbookgo"
 #define kFontName1 @"Ariston"
@@ -22,9 +20,11 @@
 
 @interface Utils : NSObject
 +(UIImage *)getImageWithFileName:(NSString *)filename;
++(NSString *)imageNameFromNumber:(NSInteger)number;
 +(void)showInfoMessage:(NSString *)message fromContext:(UIViewController *)context withOKHandler:(void (^)(UIAlertAction * action))handler;
 +(void)decorateTextView:(UITextView *)textView;
 +(void)decorateImageView:(UIImageView *)imageView;
 +(void)loadFloatLabelTextViewInView:(UIView *)view withPlaceholder:(NSString *)text andContent:(NSString *)content;
 +(void)changeNavigationBarWithFontName:(NSString *)fontName andTitle:(NSString *)title fromContext:(UIViewController *)context;
++(BOOL)checkNetworkConnection;
 @end

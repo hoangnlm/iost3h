@@ -242,11 +242,15 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQe-Md-xAD" userLabel="Hinh">
                                                 <rect key="frame" x="0.0" y="830" width="600" height="387"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ACN-gn-iw3" userLabel="Hinh">
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ACN-gn-iw3" userLabel="Hinh">
                                                         <rect key="frame" x="10" y="0.0" width="580" height="387"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="ACN-gn-iw3" secondAttribute="height" multiplier="3/2" id="2di-bT-Sjk"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="jOg-Gi-fac" appends="YES" id="QsY-XI-GM8"/>
+                                                        </connections>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chạm vào để chọn hình..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfV-mk-X3f">
                                                         <rect key="frame" x="11" y="347.5" width="578" height="38.5"/>
@@ -334,7 +338,7 @@
                                 <action selector="back:" destination="Ps5-g8-81a" id="oNY-Bk-VlI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_done_white_36pt" id="qEP-vf-bJA">
+                        <barButtonItem key="rightBarButtonItem" image="ic_done_all_white" id="qEP-vf-bJA">
                             <connections>
                                 <action selector="save:" destination="Ps5-g8-81a" id="h8c-NN-nBa"/>
                             </connections>
@@ -351,6 +355,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4S-Nr-yOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jOg-Gi-fac">
+                    <connections>
+                        <action selector="chonHinh:" destination="Ps5-g8-81a" id="mZf-aa-lHc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1950" y="337"/>
         </scene>
@@ -445,7 +454,20 @@
                                             </label>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D0v-Qb-xua" userLabel="Video">
                                                 <rect key="frame" x="0.0" y="687" width="600" height="400"/>
+                                                <subviews>
+                                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="videoerror" translatesAutoresizingMaskIntoConstraints="NO" id="zGu-ih-IfC">
+                                                        <rect key="frame" x="180" y="136" width="240" height="128"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="FPT-Bs-S3U" appends="YES" id="wGv-Ao-8c6"/>
+                                                        </connections>
+                                                    </imageView>
+                                                </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="zGu-ih-IfC" firstAttribute="leading" secondItem="D0v-Qb-xua" secondAttribute="leading" id="3dI-dX-5qh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zGu-ih-IfC" secondAttribute="trailing" id="5ia-1d-O5L"/>
+                                                    <constraint firstItem="zGu-ih-IfC" firstAttribute="top" secondItem="D0v-Qb-xua" secondAttribute="top" id="Gp1-EM-NNs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zGu-ih-IfC" secondAttribute="bottom" id="bMi-Fw-21Z"/>
                                                     <constraint firstAttribute="width" secondItem="D0v-Qb-xua" secondAttribute="height" multiplier="6/4" id="uSg-7u-iuA"/>
                                                 </constraints>
                                             </view>
@@ -528,9 +550,15 @@
                         <outlet property="txtLink" destination="9HE-lu-4g0" id="v0M-sT-GyW"/>
                         <outlet property="txtNguyenLieu" destination="Udg-vB-gV6" id="hgN-T4-6RP"/>
                         <outlet property="video" destination="D0v-Qb-xua" id="Vni-dK-bCc"/>
+                        <outlet property="videoThumbnail" destination="zGu-ih-IfC" id="ltA-IC-R72"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wi1-lw-Tha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="FPT-Bs-S3U">
+                    <connections>
+                        <action selector="tapVideo:" destination="hEy-gp-JbB" id="k8X-mB-Jce"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1215" y="1085"/>
         </scene>
@@ -846,15 +874,16 @@
     </scenes>
     <resources>
         <image name="ic_add_circle_outline_white" width="24" height="24"/>
-        <image name="ic_done_white_36pt" width="36" height="36"/>
+        <image name="ic_done_all_white" width="24" height="24"/>
         <image name="ic_mode_edit_white" width="24" height="24"/>
         <image name="ic_reply_white" width="24" height="24"/>
         <image name="ic_storage_white" width="24" height="24"/>
         <image name="line2" width="214" height="71"/>
         <image name="placeholder" width="134" height="89"/>
+        <image name="videoerror" width="800" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nXP-yK-aaa"/>
-        <segue reference="pA6-a9-WSC"/>
+        <segue reference="OfE-ie-qfk"/>
+        <segue reference="yNr-At-42o"/>
     </inferredMetricsTieBreakers>
 </document>

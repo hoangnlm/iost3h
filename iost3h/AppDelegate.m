@@ -25,6 +25,26 @@
     // Change image color of navigation bar
     [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
     
+    // Default settings for toast
+    [CRToastManager setDefaultOptions:@{
+                                        kCRToastNotificationTypeKey : @(CRToastTypeNavigationBar),
+                                        kCRToastFontKey             : [UIFont fontWithName:@"HelveticaNeue-Light" size:16],
+                                        kCRToastTextColorKey        : [UIColor whiteColor],
+                                        kCRToastBackgroundColorKey  : [UIColor orangeColor],
+                                        kCRToastTimeIntervalKey : @(1.0),
+                                        kCRToastAnimationInTypeKey : @(CRToastAnimationTypeSpring),
+                                        kCRToastAnimationOutTypeKey : @(CRToastAnimationTypeLinear),
+                                        kCRToastAnimationInDirectionKey : @(CRToastAnimationDirectionTop),
+                                        kCRToastAnimationOutDirectionKey : @(CRToastAnimationDirectionTop),
+                                        kCRToastAutorotateKey       : @(YES),
+                                        kCRToastInteractionRespondersKey : @[[CRToastInteractionResponder interactionResponderWithInteractionType:CRToastInteractionTypeTap automaticallyDismiss:YES block:nil]]}];
+    
+    // Thiet lap default setting
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setBool:YES forKey:kSettingHienMonAnMoi];
+    [userDefault setInteger:5 forKey:kSettingSoMonAnMoi];
+    [userDefault synchronize];
+    
     return YES;
 }
 

@@ -20,10 +20,13 @@
     
 }
 
-#pragma mark Custom Functions
+#pragma mark - Helpers
 
 -(void)initData{
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    if (self.revealViewController) {
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+    
     // Doi font cho navigation bar
     [Utils changeNavigationBarWithFontName:kFontName1 andTitle:self.currentMonAn ? @"Cập Nhật Món Ăn" : @"Thêm Món Ăn" fromContext:self];
     if (!self.currentMonAn) {
@@ -40,11 +43,55 @@
     [Utils loadFloatLabelTextViewInView:self.viewLink withPlaceholder:@"  Link" andContent:self.currentMonAn._link];
 }
 
+// Check du lieu dau vao
+-(BOOL)validateInput{
+    BOOL result = YES;
+    // Ten khong duoc bo trong
+    UITextView *ten = (UITextView *)self.viewTen.subviews[0];
+    if ([[ten.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        [CRToastManager showNotificationWithMessage:@"Tên món ăn không bỏ trống!" completionBlock:^{
+            [ten becomeFirstResponder];
+        }];
+        result = NO;
+    }
+    return result;
+}
+
+// Hien thi image picker
+-(void)showImagePicker{
+    UIImagePickerController *imagePicker = [UIImagePickerController new];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.allowsEditing = YES;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+//    NSLog(@"%@", info);
+    self.imgHinh.image = info[UIImagePickerControllerEditedImage];
+    // Dong image picker view lai khi user da chon xong hinh
+    [self dismissViewControllerAnimated:YES completion:nil];
+//        [userDefault setObject:[NSData dataWithData:UIImageJPEGRepresentation(self.imageView.image, 1.0)] forKey:@"image"];
+}
+
+#pragma mark - Actions
+
+- (IBAction)chonHinh:(id)sender {
+    [self showImagePicker];
+}
+
 - (IBAction)save:(id)sender {
     // Validate du lieu nhap vao
-    if ([self validateInput]) {
+    if (![self validateInput]) {
         return;
     }
+    
     UITextView *ten = (UITextView *) self.viewTen.subviews[0];
     UITextView *mota = (UITextView *) self.viewMoTa.subviews[0];
     UITextView *nguyenlieu = (UITextView *) self.viewNguyenLieu.subviews[0];
@@ -64,26 +111,19 @@
     
     // Luu vao db
     self.dao = [MonAnDAO new];
-    [self.dao saveMonAn:self.currentMonAn];
-    
-    // Thong bao luu thanh cong xong quay ve man hinh chinh
-    [Utils showInfoMessage:@"Đã lưu thông tin!" fromContext:self withOKHandler:^(UIAlertAction *action) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+    if ([self.dao saveMonAn:self.currentMonAn]) {
+        // Thong bao luu thanh cong xong quay ve man hinh chinh
+        [CRToastManager showNotificationWithMessage:@"Đã lưu thông tin!" completionBlock:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+    } else {
+        // Thong bao luu khong thanh cong
+        [CRToastManager showNotificationWithMessage:@"Lỗi! Không thể lưu thông tin!" completionBlock:nil];
+    }
 }
 
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(BOOL)validateInput{
-    BOOL result = NO;
-    // Ten khong duoc bo trong
-    UITextView *ten = (UITextView *)self.viewTen.subviews[0];
-    if ([[ten.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-        [Utils showInfoMessage:@"Tên món ăn không được bỏ trống!" fromContext:self withOKHandler:nil];
-        result = NO;
-    }
-    return result;
-}
 @end

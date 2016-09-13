@@ -15,6 +15,21 @@
     return [UIImage imageWithContentsOfFile:imagePath];
 }
 
+// Tra ve ten hinh tu so thu tu (id)
++(NSString *)imageNameFromNumber:(NSInteger)number{
+    NSString *filename;
+    if (number<10) {
+        filename = [NSString stringWithFormat:@"mon000%zd", number];
+    } else if (10<=number && number<=99) {
+        filename = [NSString stringWithFormat:@"mon00%zd", number];
+    } else if (100<=number && number<=999) {
+        filename = [NSString stringWithFormat:@"mon0%zd", number];
+    } else if (1000<=number && number<=9999) {
+        filename = [NSString stringWithFormat:@"mon%zd", number];
+    }
+    return  filename;
+}
+
 // Hien thi thong bao voi 1 nut OK
 +(void)showInfoMessage:(NSString *)message fromContext:(UIViewController *)context withOKHandler:(void (^)(UIAlertAction * action))handler{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
@@ -62,6 +77,7 @@
     [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(xMargin)-[floatView]-(xMargin)-|" options:0 metrics:@{@"xMargin": @(0)} views:NSDictionaryOfVariableBindings(floatView)]];
 }
 
+// Trang tri cho navigation bar
 +(void)changeNavigationBarWithFontName:(NSString *)fontName andTitle:(NSString *)title fromContext:(UIViewController *)context{
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 400, 35)];
     label.backgroundColor = [UIColor clearColor];
@@ -72,4 +88,15 @@
     [label setAdjustsFontSizeToFitWidth:YES];
     context.navigationItem.titleView = label;
 }
+
+// Check internet connection
++(BOOL)checkNetworkConnection{
+    Reachability *reach = [Reachability reachabilityForInternetConnection];
+    NetworkStatus status = [reach currentReachabilityStatus];
+    if (status==ReachableViaWWAN || status==ReachableViaWiFi) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

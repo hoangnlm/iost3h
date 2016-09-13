@@ -9,7 +9,7 @@
 #import "MonAnDAO.h"
 #import "JVFloatLabeledTextView.h"
 
-@interface UpdateViewController : UIViewController
+@interface UpdateViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property(nonatomic) MonAnDAO *dao;
 @property(nonatomic)MonAn *currentMonAn;
 @property (weak, nonatomic) IBOutlet UIView *viewTen;
@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewVideo;
 @property (weak, nonatomic) IBOutlet UIView *viewLink;
 
+- (IBAction)chonHinh:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)back:(id)sender;
 
