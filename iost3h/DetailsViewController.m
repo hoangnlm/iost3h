@@ -96,8 +96,8 @@
             CGFloat x = self.videoThumbnail.frame.origin.x + self.videoThumbnail.frame.size.width/2 - 45;
             CGFloat y = self.videoThumbnail.frame.origin.y + self.videoThumbnail.frame.size.height/2 - 45;
             UIImageView *bg = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 90, 90)];
-            bg.image = [UIImage imageNamed:@"Aura_Play"];
-            bg.alpha = 0.65;
+            bg.image = [UIImage imageNamed:@"video_wait"];
+            bg.alpha = 1;
             bg.contentMode = UIViewContentModeScaleAspectFit;
             [self.videoThumbnail addSubview:bg];
             [self.videoThumbnail bringSubviewToFront:bg];

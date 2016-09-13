@@ -155,11 +155,14 @@
 }
 
 -(UIView *)createHeaderView{
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.treeView.bounds.size.width, 90)];
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.treeView.bounds.size.width, 110)];
     UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(15, 8, 50, 50)];
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(76, 0, self.treeView.bounds.size.width-76, 38)];
     UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(77, 40, self.treeView.bounds.size.width-77, 16)];
-    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(0, 70, self.treeView.bounds.size.width, 1.5)];
+//    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(0, 70, self.treeView.bounds.size.width, 1.5)];
+    UIImageView *line2 = [[UIImageView alloc] initWithFrame:CGRectMake(-60, 60, self.treeView.bounds.size.width, 50)];
+    line2.contentMode = UIViewContentModeScaleAspectFit;
+    line2.image = [UIImage imageNamed:@"horizontal_line2"];
     
     header.backgroundColor = [UIColor clearColor];
     logo.image = [UIImage imageNamed:@"me"];
@@ -167,7 +170,7 @@
     [[logo layer] setBorderColor:[[UIColor cyanColor] CGColor]];
     [[logo layer] setBorderWidth:2];
     [[logo layer] setCornerRadius:25];
-    logo.contentMode = UIViewContentModeScaleAspectFit;
+    logo.contentMode = UIViewContentModeScaleToFill;
     title.text = @"Cook Book Go";
     title.textColor = [UIColor cyanColor];
     title.backgroundColor = [UIColor clearColor];
@@ -176,12 +179,13 @@
     author.textColor = [UIColor cyanColor];
     author.backgroundColor = [UIColor clearColor];
     [author setFont:[author.font fontWithSize:13]];
-    line1.backgroundColor = [UIColor cyanColor];
+//    line1.backgroundColor = [UIColor cyanColor];
 
     [header addSubview:logo];
     [header addSubview:title];
     [header addSubview:author];
-    [header addSubview:line1];
+//    [header addSubview:line1];
+    [header addSubview:line2];
     return  header;
 }
 

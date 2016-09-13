@@ -30,6 +30,7 @@
                                         kCRToastNotificationTypeKey : @(CRToastTypeNavigationBar),
                                         kCRToastImageKey : [UIImage imageNamed:@"alert_icon.png"],
                                         kCRToastFontKey             : [UIFont fontWithName:@"HelveticaNeue-Light" size:16],
+                                        kCRToastTextAlignmentKey : @(NSTextAlignmentLeft),
                                         kCRToastTextColorKey        : [UIColor whiteColor],
                                         kCRToastBackgroundColorKey  : [UIColor orangeColor],
                                         kCRToastTimeIntervalKey : @(2.0),

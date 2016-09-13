@@ -76,7 +76,7 @@ dispatch_source_t CreateDispatchTimer(double interval, dispatch_queue_t queue, d
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, 0, parent.frame.size.width, _scrollView.frame.size.height)];
         // Thiet lap image cho imageView
         imageView.image = [Utils getImageWithFileName:self.listMonAn[i]._image];
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.contentMode = UIViewContentModeScaleToFill;
         [_scrollView addSubview:imageView];
         x += imageView.frame.size.width;
     }

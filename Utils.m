@@ -27,7 +27,7 @@
     } else if (1000<=number && number<=9999) {
         filename = [NSString stringWithFormat:@"mon%zd", number];
     }
-    return  filename;
+    return  [NSString stringWithFormat:@"%@.png", filename];
 }
 
 // Copy hinh vao device khi user chon hinh tu image picker
