@@ -7,6 +7,7 @@
 //
 
 #import "DBProvider.h"
+#define kSoMonAnKhoiTao 105
 
 @implementation DBProvider
 
@@ -40,21 +41,11 @@
                 } else {
                     // Copy image vao device
                     NSString *filename;
-                    for (int i=1; i<=8; i++) {
+                    for (int i=1; i<=kSoMonAnKhoiTao; i++) {
                         filename = [Utils imageNameFromNumber:i];
                         // Quy dinh hinh cua mon an co extension la "png"
-                        NSString *source = [[NSBundle mainBundle] pathForResource:filename ofType:@"png"];
-                        NSString *destination = [NSString stringWithFormat:@"%@/%@.png", imageFolder, filename];
-                        [fm copyItemAtPath:source toPath:destination error:&error];
-                        if (error) {
-                            NSLog(@"Error copy images: %@", error.localizedDescription);
-                        }
-                    }
-                    for (int i=96; i<=105; i++) {
-                        filename = [Utils imageNameFromNumber:i];
-                        // Quy dinh hinh cua mon an co extension la "png"
-                        NSString *source = [[NSBundle mainBundle] pathForResource:filename ofType:@"png"];
-                        NSString *destination = [NSString stringWithFormat:@"%@/%@.png", imageFolder, filename];
+                        NSString *source = [[NSBundle mainBundle] pathForResource:[filename componentsSeparatedByString:@"."][0] ofType:@"png"];
+                        NSString *destination = [NSString stringWithFormat:@"%@/%@", imageFolder, filename];
                         [fm copyItemAtPath:source toPath:destination error:&error];
                         if (error) {
                             NSLog(@"Error copy images: %@", error.localizedDescription);

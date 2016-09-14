@@ -379,7 +379,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kSD-T2-moI">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1230"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1405"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line2" translatesAutoresizingMaskIntoConstraints="NO" id="1tg-vn-QVH" userLabel="hinh">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
@@ -387,20 +387,43 @@
                                                     <constraint firstAttribute="width" secondItem="1tg-vn-QVH" secondAttribute="height" multiplier="6/4" id="vTu-Ha-Et2"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="horizontal_line" translatesAutoresizingMaskIntoConstraints="NO" id="IGd-FL-SrI">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_line" translatesAutoresizingMaskIntoConstraints="NO" id="IGd-FL-SrI">
                                                 <rect key="frame" x="0.0" y="410" width="600" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="b1e-il-vCE"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NGUYÊN LIỆU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qV-Af-hiW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MÔ TẢ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qV-Af-hiW">
                                                 <rect key="frame" x="0.0" y="445" width="600" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uv2-kd-Lno" userLabel="Nguyenlieu">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83a-Or-jGg" userLabel="Mota">
                                                 <rect key="frame" x="0.0" y="476" width="600" height="135"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mô tả" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAn-Rm-190">
+                                                        <rect key="frame" x="20" y="0.0" width="560" height="21"/>
+                                                        <fontDescription key="fontDescription" name="UVNHoaDao" family="UVN Hoa Dao" pointSize="17"/>
+                                                        <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="gAn-Rm-190" secondAttribute="bottom" constant="30" id="K0j-Hz-nXo"/>
+                                                    <constraint firstItem="gAn-Rm-190" firstAttribute="top" secondItem="83a-Or-jGg" secondAttribute="top" id="d3c-LK-9E8"/>
+                                                    <constraint firstItem="gAn-Rm-190" firstAttribute="leading" secondItem="83a-Or-jGg" secondAttribute="leading" constant="20" id="mDn-hA-qa2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gAn-Rm-190" secondAttribute="trailing" constant="20" id="peO-OY-Tt8"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NGUYÊN LIỆU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFg-dh-Qtz">
+                                                <rect key="frame" x="0.0" y="621" width="600" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uv2-kd-Lno" userLabel="Nguyenlieu">
+                                                <rect key="frame" x="0.0" y="651" width="600" height="135"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nguyên liệu" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udg-vB-gV6">
                                                         <rect key="frame" x="20" y="0.0" width="560" height="21"/>
@@ -417,13 +440,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CÁCH NẤU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E93-sk-nas">
-                                                <rect key="frame" x="0.0" y="621" width="600" height="21"/>
+                                                <rect key="frame" x="0.0" y="796" width="600" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zmc-y6-7Fr" userLabel="Cachnau">
-                                                <rect key="frame" x="0.0" y="651" width="600" height="51"/>
+                                                <rect key="frame" x="0.0" y="827" width="600" height="51"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybz-V5-BmS">
                                                         <rect key="frame" x="20" y="0.0" width="560" height="21"/>
@@ -447,13 +470,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="XEM HƯỚNG DẪN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdZ-Es-NWS">
-                                                <rect key="frame" x="0.0" y="712" width="600" height="21"/>
+                                                <rect key="frame" x="0.0" y="888" width="600" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D0v-Qb-xua" userLabel="Video">
-                                                <rect key="frame" x="0.0" y="743" width="600" height="400"/>
+                                                <rect key="frame" x="0.0" y="918" width="600" height="400"/>
                                                 <subviews>
                                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="videoerror" translatesAutoresizingMaskIntoConstraints="NO" id="zGu-ih-IfC">
                                                         <rect key="frame" x="180" y="136" width="240" height="128"/>
@@ -472,13 +495,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tham khảo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mh-QY-rbW">
-                                                <rect key="frame" x="0.0" y="1153" width="600" height="17"/>
+                                                <rect key="frame" x="0.0" y="1328" width="600" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSQ-u0-gmp">
-                                                <rect key="frame" x="0.0" y="1180" width="600" height="50"/>
+                                                <rect key="frame" x="0.0" y="1355" width="600" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HE-lu-4g0">
                                                         <rect key="frame" x="20" y="0.0" width="560" height="14.5"/>
@@ -548,6 +571,7 @@
                         <outlet property="imgHinh" destination="1tg-vn-QVH" id="0Lj-Sh-iL6"/>
                         <outlet property="txtCachNau" destination="ybz-V5-BmS" id="JKd-4M-Q3S"/>
                         <outlet property="txtLink" destination="9HE-lu-4g0" id="v0M-sT-GyW"/>
+                        <outlet property="txtMota" destination="gAn-Rm-190" id="QQE-Mm-P8p"/>
                         <outlet property="txtNguyenLieu" destination="Udg-vB-gV6" id="hgN-T4-6RP"/>
                         <outlet property="video" destination="D0v-Qb-xua" id="Vni-dK-bCc"/>
                         <outlet property="videoThumbnail" destination="zGu-ih-IfC" id="ltA-IC-R72"/>

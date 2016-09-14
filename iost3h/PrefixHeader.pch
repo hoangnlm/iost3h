@@ -12,7 +12,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <CRToast/CRToast.h>
-#import "JVFloatLabeledTextView.h"
 #import "SWRevealViewController.h"
 #import "Reachability.h"
 #import "Utils.h"

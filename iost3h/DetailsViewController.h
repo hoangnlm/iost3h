@@ -11,6 +11,7 @@
 
 @interface DetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imgHinh;
+@property (weak, nonatomic) IBOutlet UILabel *txtMota;
 @property (weak, nonatomic) IBOutlet UILabel *txtNguyenLieu;
 @property (weak, nonatomic) IBOutlet UILabel *txtCachNau;
 @property (weak, nonatomic) IBOutlet UIView *video;

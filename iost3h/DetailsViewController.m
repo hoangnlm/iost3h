@@ -51,6 +51,7 @@
         // Doi font cho navigation bar
         [Utils changeNavigationBarWithFontName:kFontName1 andTitle:[self.currentMonAn._ten capitalizedString] fromContext:self];
         self.imgHinh.image = self.currentMonAn._image==nil ? [UIImage imageNamed:@"placeholder"] : [Utils getImageWithFileName:self.currentMonAn._image];
+        self.txtMota.text = self.currentMonAn._mota;
         self.txtNguyenLieu.text = self.currentMonAn._nguyenlieu;
         self.txtCachNau.text = self.currentMonAn._cachnau;
         self.txtLink.text = self.currentMonAn._link;

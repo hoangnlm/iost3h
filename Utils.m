@@ -7,6 +7,7 @@
 //
 
 #import "Utils.h"
+#import "JVFloatLabeledTextView.h"
 
 @implementation Utils
 // Tra ve 1 UIImage tu ten file hinh duoc luu trong device
@@ -72,7 +73,7 @@
     floatView.text = content;
     floatView.placeholder = text;
     floatView.placeholderTextColor = [UIColor darkGrayColor];
-    floatView.floatingLabelFont = [UIFont boldSystemFontOfSize:10];
+    floatView.floatingLabelFont = [UIFont boldSystemFontOfSize:12];
     floatView.floatingLabelXPadding = 10;
     floatView.floatingLabelYPadding = 10;
     floatView.placeholderYPadding = 10;
